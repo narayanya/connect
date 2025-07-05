@@ -211,8 +211,8 @@
     --vz-card-header-border-width: 1px;
     --vz-card-shadow: 0 1px 2px rgba(56, 65, 74, 0.15);
     --vz-headings-font-family: var(--vz-font-family-secondary);
-    --vz-vertical-menu-item-font-size: 0.9375rem;
-    --vz-vertical-menu-sub-item-font-size: 0.813rem;
+    --vz-vertical-menu-item-font-size: -0.0625rem;
+    --vz-vertical-menu-sub-item-font-size: 0.713rem;
     --vz-vertical-menu-bg: #fff;
     --vz-vertical-menu-border: #fff;
     --vz-vertical-menu-item-color: #6d7080;
@@ -2774,7 +2774,7 @@
     -ms-flex-align: center;
     align-items: center;
     margin: 0 auto;
-    height: 70px;
+    height: 45px;
     padding: 0 var(--vz-grid-gutter-width) 0 calc(var(--vz-grid-gutter-width) * .5)
 }
 
@@ -2902,7 +2902,7 @@
 }
 
 .header-item {
-    height: 70px;
+    height: 45px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2933,7 +2933,7 @@
 }
 
 .topbar-user .dropdown-menu {
-    top: 6px !important
+    top: -3px !important
 }
 
 .notification-item {
@@ -3241,7 +3241,7 @@
 }
 
 .page-content {
-    padding: calc(70px + var(--vz-grid-gutter-width)) calc(var(--vz-grid-gutter-width) * .5) 60px calc(var(--vz-grid-gutter-width) * .5)
+    padding: calc(45px + var(--vz-grid-gutter-width)) calc(var(--vz-grid-gutter-width) * .5) 60px calc(var(--vz-grid-gutter-width) * .5)
 }
 
 .navbar-menu {
@@ -3267,7 +3267,7 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    padding: .625rem 1.5rem;
+    padding: .325rem 1.5rem;
     color: var(--vz-vertical-menu-item-color);
     font-size: var(--vz-vertical-menu-item-font-size);
     font-family: var(--vz-vertical-menu-item-font-family)
@@ -3354,7 +3354,7 @@
 }
 
 .navbar-menu .navbar-nav .nav-sm .nav-link {
-    padding: .55rem 1.5rem !important;
+    padding: .45rem 1.5rem !important;
     color: var(--vz-vertical-menu-sub-item-color);
     white-space: none;
     position: relative;
@@ -7105,7 +7105,7 @@ code {
 :root {
     --vz-card-logo-dark: block;
     --vz-card-logo-light: none;
-    --vz-vertical-menu-width: 250px;
+    --vz-vertical-menu-width: 190px;
     --vz-vertical-menu-width-md: 180px;
     --vz-vertical-menu-width-sm: 70px;
     --vz-vertical-menu-item-font-family: var(--vz-font-family-primary);

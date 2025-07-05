@@ -48,7 +48,7 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center">
-                <h4 class="card-title mb-0">gender List</h4>
+                <h4 class="card-title mb-0">Gender List</h4>
                 <div class="d-flex align-items-center">
                     <form class="d-flex me-3" role="search">
                         <input type="hidden" name="gender_source" value="gender">
