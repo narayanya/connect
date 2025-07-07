@@ -57,3 +57,7 @@ table tbody td{
     --vz-bg-opacity: 1;
     background-color: rgb(64 128 118) !important;
 }
+.form-label
+ {
+    margin-bottom: 5px;
+}

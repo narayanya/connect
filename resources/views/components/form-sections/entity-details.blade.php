@@ -16,14 +16,14 @@
     <div class="row">
         <div class="col-md-6">
             <div class="form-group mb-3">
-                <label for="establishment_name" class="form-label">Name of Establishment *</label>
+                <label for="establishment_name" class="form-label">Name of Establishment <span class="text-danger">*</span></label>
                 <input type="text" class="form-control" id="establishment_name" name="establishment_name"
                     value="{{ old('establishment_name', isset($application->entityDetails) ? $application->entityDetails->establishment_name : '') }}" required>
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group mb-3">
-                <label for="entity_type" class="form-label">Type/Nature of Establishment *</label>
+                <label for="entity_type" class="form-label">Type/Nature of Establishment <span class="text-danger">*</span></label>
                 <select class="form-control" id="entity_type" name="entity_type" required onchange="showRelevantFields()">
                     <option value="">Select Type</option>
                     @foreach(['sole_proprietorship' => 'Sole Proprietorship', 'partnership' => 'Partnership', 'llp' => 'Limited Liability Partnership (LLP)', 'private_company' => 'Private Company', 'public_company' => 'Public Company', 'cooperative_society' => 'Cooperative Societies', 'trust' => 'Trust'] as $value => $label)
@@ -47,21 +47,21 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group mb-3">
-                            <label for="proprietor_name" class="form-label">Name of Proprietor *</label>
+                            <label for="proprietor_name" class="form-label">Name of Proprietor <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="proprietor_name" name="proprietor_name"
                                 value="{{ old('proprietor_name', isset($application->entityDetails->additional_data['proprietor']['name']) ? $application->entityDetails->additional_data['proprietor']['name'] : '') }}" required>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group mb-3">
-                            <label for="proprietor_dob" class="form-label">Date of Birth *</label>
+                            <label for="proprietor_dob" class="form-label">Date of Birth <span class="text-danger">*</span></label>
                             <input type="date" class="form-control" id="proprietor_dob" name="proprietor_dob"
                                 value="{{ old('proprietor_dob', isset($application->entityDetails->additional_data['proprietor']['dob']) ? $application->entityDetails->additional_data['proprietor']['dob'] : '') }}" required>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group mb-3">
-                            <label for="proprietor_father_name" class="form-label">Father's/Husband's Name *</label>
+                            <label for="proprietor_father_name" class="form-label">Father's/Husband's Name <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="proprietor_father_name" name="proprietor_father_name"
                                 value="{{ old('proprietor_father_name', isset($application->entityDetails->additional_data['proprietor']['father_name']) ? $application->entityDetails->additional_data['proprietor']['father_name'] : '') }}" required>
                         </div>
@@ -71,20 +71,20 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group mb-3">
-                            <label for="proprietor_address" class="form-label">Full Address *</label>
+                            <label for="proprietor_address" class="form-label">Full Address <span class="text-danger">*</span></label>
                             <textarea class="form-control" id="proprietor_address" name="proprietor_address" rows="2" required>{{ old('proprietor_address', isset($application->entityDetails->additional_data['proprietor']['address']) ? $application->entityDetails->additional_data['proprietor']['address'] : '') }}</textarea>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group mb-3">
-                            <label for="proprietor_pincode" class="form-label">Pincode *</label>
+                            <label for="proprietor_pincode" class="form-label">Pincode <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="proprietor_pincode" name="proprietor_pincode"
                                 value="{{ old('proprietor_pincode', isset($application->entityDetails->additional_data['proprietor']['pincode']) ? $application->entityDetails->additional_data['proprietor']['pincode'] : '') }}" required>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group mb-3">
-                            <label for="proprietor_country" class="form-label">Country *</label>
+                            <label for="proprietor_country" class="form-label">Country <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="proprietor_country" name="proprietor_country"
                                 value="{{ old('proprietor_country', isset($application->entityDetails->additional_data['proprietor']['country']) ? $application->entityDetails->additional_data['proprietor']['country'] : 'India') }}" required>
                         </div>
@@ -114,19 +114,19 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group mb-3">
-                                    <label class="form-label">Partner Name *</label>
+                                    <label class="form-label">Partner Name <span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" name="partner_name[]" value="{{ old("partner_name.$index", $partner['name'] ?? '') }}" required>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group mb-3">
-                                    <label class="form-label">Father's/Husband's Name *</label>
+                                    <label class="form-label">Father's/Husband's Name <span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" name="partner_father_name[]" value="{{ old("partner_father_name.$index", $partner['father_name'] ?? '') }}" required>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group mb-3">
-                                    <label class="form-label">Contact Number *</label>
+                                    <label class="form-label">Contact Number <span class="text-danger">*</span></label>
                                     <input type="tel" class="form-control" name="partner_contact[]" value="{{ old("partner_contact.$index", $partner['contact'] ?? '') }}" required>
                                 </div>
                             </div>
@@ -134,13 +134,13 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group mb-3">
-                                    <label class="form-label">Email Address *</label>
+                                    <label class="form-label">Email Address <span class="text-danger">*</span></label>
                                     <input type="email" class="form-control" name="partner_email[]" value="{{ old("partner_email.$index", $partner['email'] ?? '') }}" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group mb-3">
-                                    <label class="form-label">Full Address *</label>
+                                    <label class="form-label">Full Address <span class="text-danger">*</span></label>
                                     <textarea class="form-control" name="partner_address[]" rows="2" required>{{ old("partner_address.$index", $partner['address'] ?? '') }}</textarea>
                                 </div>
                             </div>
@@ -173,25 +173,25 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group mb-3">
-                                    <label class="form-label">Partner Name *</label>
+                                    <label class="form-label">Partner Name <span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" name="llp_partner_name[]" value="{{ old("llp_partner_name.$index", $partner['name'] ?? '') }}" required>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group mb-3">
-                                    <label class="form-label">DPIN Number *</label>
+                                    <label class="form-label">DPIN Number <span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" name="llp_partner_dpin[]" value="{{ old("llp_partner_dpin.$index", $partner['dpin_number'] ?? '') }}" required>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group mb-3">
-                                    <label class="form-label">Contact Number *</label>
+                                    <label class="form-label">Contact Number <span class="text-danger">*</span></label>
                                     <input type="tel" class="form-control" name="llp_partner_contact[]" value="{{ old("llp_partner_contact.$index", $partner['contact'] ?? '') }}" required>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group mb-3">
-                            <label class="form-label">Full Address *</label>
+                            <label class="form-label">Full Address <span class="text-danger">*</span></label>
                             <textarea class="form-control" name="llp_partner_address[]" rows="2" required>{{ old("llp_partner_address.$index", $partner['address'] ?? '') }}</textarea>
                         </div>
                         <button type="button" class="btn btn-sm btn-danger" onclick="removeLLPPartner(this)">Remove</button>
@@ -203,14 +203,14 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group mb-3">
-                    <label for="llpin_number" class="form-label">LLPIN Number *</label>
+                    <label for="llpin_number" class="form-label">LLPIN Number <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="llpin_number" name="llpin_number"
                         value="{{ old('llpin_number', isset($application->entityDetails->additional_data['llp']['llpin_number']) ? $application->entityDetails->additional_data['llp']['llpin_number'] : '') }}" required>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group mb-3">
-                    <label for="llp_incorporation_date" class="form-label">Date of Incorporation *</label>
+                    <label for="llp_incorporation_date" class="form-label">Date of Incorporation <span class="text-danger">*</span></label>
                     <input type="date" class="form-control" id="llp_incorporation_date" name="llp_incorporation_date"
                         value="{{ old('llp_incorporation_date', isset($application->entityDetails->additional_data['llp']['incorporation_date']) ? $application->entityDetails->additional_data['llp']['incorporation_date'] : '') }}" required>
                 </div>
@@ -238,25 +238,25 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group mb-3">
-                                    <label class="form-label">Director Name *</label>
+                                    <label class="form-label">Director Name <span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" name="director_name[]" value="{{ old("director_name.$index", $director['name'] ?? '') }}" required>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group mb-3">
-                                    <label class="form-label">DIN Number *</label>
+                                    <label class="form-label">DIN Number <span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" name="director_din[]" value="{{ old("director_din.$index", $director['din_number'] ?? '') }}" required>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group mb-3">
-                                    <label class="form-label">Contact Number *</label>
+                                    <label class="form-label">Contact Number <span class="text-danger">*</span></label>
                                     <input type="tel" class="form-control" name="director_contact[]" value="{{ old("director_contact.$index", $director['contact'] ?? '') }}" required>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group mb-3">
-                            <label class="form-label">Full Address *</label>
+                            <label class="form-label">Full Address <span class="text-danger">*</span></label>
                             <textarea class="form-control" name="director_address[]" rows="2" required>{{ old("director_address.$index", $director['address'] ?? '') }}</textarea>
                         </div>
                         <button type="button" class="btn btnsm btnWI danger" onclick="removeDirector(this)">Remove</button>
@@ -268,14 +268,14 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group mb-3">
-                    <label for="cin_number" class="form-label">CIN Number *</label>
+                    <label for="cin_number" class="form-label">CIN Number <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="cin_number" name="cin_number"
                         value="{{ old('cin_number', isset($application->entityDetails->additional_data['company']['cin_number']) ? $application->entityDetails->additional_data['company']['cin_number'] : '') }}" required>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group mb-3">
-                    <label for="incorporation_date" class="form-label">Date of Incorporation *</label>
+                    <label for="incorporation_date" class="form-label">Date of Incorporation <span class="text-danger">*</span></label>
                     <input type="date" class="form-control" id="incorporation_date" name="incorporation_date"
                         value="{{ old('incorporation_date', isset($application->entityDetails->additional_data['company']['incorporation_date']) ? $application->entityDetails->additional_data['company']['incorporation_date'] : '') }}" required>
                 </div>
@@ -303,25 +303,25 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group mb-3">
-                                    <label class="form-label">Member Name *</label>
+                                    <label class="form-label">Member Name <span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" name="committee_name[]" value="{{ old("committee_name.$index", $member['name'] ?? '') }}" required>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group mb-3">
-                                    <label class="form-label">Designation *</label>
+                                    <label class="form-label">Designation <span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" name="committee_designation[]" value="{{ old("committee_designation.$index", $member['designation'] ?? '') }}" required>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group mb-3">
-                                    <label class="form-label">Contact Number *</label>
+                                    <label class="form-label">Contact Number <span class="text-danger">*</span></label>
                                     <input type="tel" class="form-control" name="committee_contact[]" value="{{ old("committee_contact.$index", $member['contact'] ?? '') }}" required>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group mb-3">
-                            <label class="form-label">Full Address *</label>
+                            <label class="form-label">Full Address <span class="text-danger">*</span></label>
                             <textarea class="form-control" name="committee_address[]" rows="2" required>{{ old("committee_address.$index", $member['address'] ?? '') }}</textarea>
                         </div>
                         <button type="button" class="btn btn-sm btn-danger" onclick="removeCommitteeMember(this)">Remove</button>
@@ -333,14 +333,14 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group mb-3">
-                    <label for="cooperative_reg_number" class="form-label">Registration Number *</label>
+                    <label for="cooperative_reg_number" class="form-label">Registration Number <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="cooperative_reg_number" name="cooperative_reg_number"
                         value="{{ old('cooperative_reg_number', isset($application->entityDetails->additional_data['cooperative']['reg_number']) ? $application->entityDetails->additional_data['cooperative']['reg_number'] : '') }}" required>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group mb-3">
-                    <label for="cooperative_reg_date" class="form-label">Registration Date *</label>
+                    <label for="cooperative_reg_date" class="form-label">Registration Date <span class="text-danger">*</span></label>
                     <input type="date" class="form-control" id="cooperative_reg_date" name="cooperative_reg_date"
                         value="{{ old('cooperative_reg_date', isset($application->entityDetails->additional_data['cooperative']['reg_date']) ? $application->entityDetails->additional_data['cooperative']['reg_date'] : '') }}" required>
                 </div>
@@ -368,25 +368,25 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group mb-3">
-                                    <label class="form-label">Trustee Name *</label>
+                                    <label class="form-label">Trustee Name <span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" name="trustee_name[]" value="{{ old("trustee_name.$index", $trustee['name'] ?? '') }}" required>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group mb-3">
-                                    <label class="form-label">Designation *</label>
+                                    <label class="form-label">Designation <span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" name="trustee_designation[]" value="{{ old("trustee_designation.$index", $trustee['designation'] ?? '') }}" required>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group mb-3">
-                                    <label class="form-label">Contact Number *</label>
+                                    <label class="form-label">Contact Number <span class="text-danger">*</span></label>
                                     <input type="tel" class="form-control" name="trustee_contact[]" value="{{ old("trustee_contact.$index", $trustee['contact'] ?? '') }}" required>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group mb-3">
-                            <label class="form-label">Full Address *</label>
+                            <label class="form-label">Full Address <span class="text-danger">*</span></label>
                             <textarea class="form-control" name="trustee_address[]" rows="2" required>{{ old("trustee_address.$index", $trustee['address'] ?? '') }}</textarea>
                         </div>
                         <button type="button" class="btn btn-sm btn-danger" onclick="removeTrustee(this)">Remove</button>
@@ -398,14 +398,14 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group mb-3">
-                    <label for="trust_reg_number" class="form-label">Registration Number *</label>
+                    <label for="trust_reg_number" class="form-label">Registration Number <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="trust_reg_number" name="trust_reg_number"
                         value="{{ old('trust_reg_number', isset($application->entityDetails->additional_data['trust']['reg_number']) ? $application->entityDetails->additional_data['trust']['reg_number'] : '') }}" required>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group mb-3">
-                    <label for="trust_reg_date" class="form-label">Registration Date *</label>
+                    <label for="trust_reg_date" class="form-label">Registration Date <span class="text-danger">*</span></label>
                     <input type="date" class="form-control" id="trust_reg_date" name="trust_reg_date"
                         value="{{ old('trust_reg_date', isset($application->entityDetails->additional_data['trust']['reg_date']) ? $application->entityDetails->additional_data['trust']['reg_date'] : '') }}" required>
                 </div>
@@ -417,7 +417,7 @@
     <div class="row">
         <div class="col-md-4">
             <div class="form-group mb-3">
-                <label for="business_address" class="form-label">Business Place/Shop Address *</label>
+                <label for="business_address" class="form-label">Business Place/Shop Address <span class="text-danger">*</span></label>
                 <textarea class="form-control" id="business_address" name="business_address" rows="2" required>{{ old('business_address', isset($application->entityDetails) ? $application->entityDetails->business_address : '') }}</textarea>
             </div>
         </div>
@@ -440,7 +440,7 @@
         <!-- City -->
         <div class="col-md-2">
             <div class="form-group mb-3">
-                <label for="city" class="form-label">City *</label>
+                <label for="city" class="form-label">City <span class="text-danger">*</span></label>
                 <input type="text" class="form-control" id="city" name="city"
                     value="{{ old('city', isset($application->entityDetails) ? $application->entityDetails->city : '') }}" required>
             </div>
@@ -448,7 +448,7 @@
         <!-- State -->
         <div class="col-md-3">
             <div class="form-group mb-3">
-                <label for="state_id" class="form-label">State *</label>
+                <label for="state_id" class="form-label">State <span class="text-danger">*</span></label>
                 <select class="form-select" id="state_id" name="state_id" required>
                     <option value="">-- Select State --</option>
                     @foreach($states as $state)
@@ -463,7 +463,7 @@
         <!-- District -->
         <div class="col-md-3">
             <div class="form-group mb-3">
-                <label for="district_id" class="form-label">District *</label>
+                <label for="district_id" class="form-label">District <span class="text-danger">*</span></label>
                 <select class="form-select" id="district_id" name="district_id" required>
                     <option value="">Select District</option>
                     @if(isset($application->entityDetails) && $application->entityDetails->district_id)
@@ -480,7 +480,7 @@
         <!-- Pincode -->
         <div class="col-md-2">
             <div class="form-group mb-3">
-                <label for="pincode" class="form-label">Pincode *</label>
+                <label for="pincode" class="form-label">Pincode <span class="text-danger">*</span></label>
                 <input type="text" class="form-control" id="pincode" name="pincode"
                     value="{{ old('pincode', isset($application->entityDetails) ? $application->entityDetails->pincode : '') }}" required>
             </div>
@@ -488,7 +488,7 @@
         <!-- Country -->
         <div class="col-md-2">
             <div class="form-group mb-3">
-                <label for="country" class="form-label">Country *</label>
+                <label for="country" class="form-label">Country <span class="text-danger">*</span></label>
                 <input type="text" class="form-control" id="country" name="country"
                     value="India" readonly>
                 <input type="hidden" name="country_id" value="1">
@@ -498,14 +498,14 @@
     <div class="row">
         <div class="col-md-6">
             <div class="form-group mb-3">
-                <label for="mobile" class="form-label">Mobile Number *</label>
+                <label for="mobile" class="form-label">Mobile Number <span class="text-danger">*</span></label>
                 <input type="tel" class="form-control" id="mobile" name="mobile"
                     value="{{ old('mobile', isset($application->entityDetails) ? $application->entityDetails->mobile : '') }}" required>
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group mb-3">
-                <label for="email" class="form-label">Email Address *</label>
+                <label for="email" class="form-label">Email Address <span class="text-danger">*</span></label>
                 <input type="email" class="form-control" id="email" name="email"
                     value="{{ old('edit', isset($application->entityDetails) ? $application->entityDetails->email : '') }}" required>
             </div>
@@ -514,7 +514,7 @@
     <div class="row">
                     <div class="col-md-6">
     <div class="form-group mb-3">
-        <label for="pan_number" class="form-label">PAN Number *</label>
+        <label for="pan_number" class="form-label">PAN Number <span class="text-danger">*</span></label>
         <div class="input-group">
             <input type="text" class="form-control" id="pan_number" name="pan_number"
                    value="{{ old('pan_number', $panDoc['details']['pan_number'] ?? ($application->entityDetails->pan_number ?? '')) }}"
@@ -540,7 +540,7 @@
 </div>
 <div class="col-md-6">
         <div class="form-group mb-3">
-            <label for="gst_applicable" class="form-label">GST Applicable *</label>
+            <label for="gst_applicable" class="form-label">GST Applicable <span class="text-danger">*</span></label>
             <select class="form-control" id="gst_applicable" name="gst_applicable" required onchange="toggleGSTFields()">
                 <option value="" disabled {{ old('gst_applicable', isset($application->entityDetails) ? '' : 'selected') }}>-- Select --</option>
                 <option value="yes" {{ old('gst_applicable', isset($application->entityDetails) && $application->entityDetails->gst_applicable === 'yes' ? 'selected' : '') }}>Yes</option>
@@ -554,14 +554,14 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group mb-3">
-                    <label for="gst_number" class="form-label">GST Number *</label>
+                    <label for="gst_number" class="form-label">GST Number <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="gst_number" name="gst_number"
                     value="{{ old('gst_number', $gstDoc['details']['gst_number'] ?? ($application->entityDetails->gst_number ?? '')) }}">
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group mb-3">
-                    <label for="gst_validity" class="form-label">GST Validity Date *</label>
+                    <label for="gst_validity" class="form-label">GST Validity Date <span class="text-danger">*</span></label>
                     <input type="date" class="form-control" id="gst_validity" name="gst_validity"
                     value="{{ old('gst_validity', $gstDoc['details']['gst_validity'] ?? ($application->entityDetails->additional_data['gst_validity'] ?? '')) }}">
              </div>
@@ -570,7 +570,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group mb-3">
-                    <label for="gst_file" class="form-label">Upload GST Document *</label>
+                    <label for="gst_file" class="form-label">Upload GST Document <span class="text-danger">*</span></label>
                     <div class="input-group">
                         <input type="file" class="form-control d-none" id="gst_file" name="gst_file" accept=".pdf,.jpg,.jpeg,.png">
                         <button type="button" class="btn btn-outline-secondary" id="gst_upload_btn">Upload</button>
@@ -588,7 +588,7 @@
     <div class="row">
         <div class="col-md-6">
             <div class="form-group mb-3">
-                <label for="seed_license" class="form-label">Seed License Number *</label>
+                <label for="seed_license" class="form-label">Seed License Number <span class="text-danger">*</span></label>
                 <div class="input-group">
                     <input type="text" class="form-control" id="seed_license" name="seed_license"
                         value="{{ old('seed_license', $seedLicenseDoc['details']['seed_license_number'] ?? ($application->entityDetails->seed_license ?? '')) }}" required>
@@ -612,7 +612,7 @@
         </div>
         <div class="col-md-6">
             <div class="form-group mb-3">
-            <label for="seed_license_validity" class="form-label">Seed License Validity Date *</label>
+            <label for="seed_license_validity" class="form-label">Seed License Validity Date <span class="text-danger">*</span></label>
             <input type="date" class="form-control" id="seed_license_validity" name="seed_license_validity"
                 value="{{ old('seed_license_validity', $seedLicenseDoc['details']['seed_license_validity'] ?? ($application->entityDetails->additional_data['seed_license_validity'] ?? '')) }}" required>
         </div>
@@ -635,32 +635,31 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-3">
             <div class="form-group mb-3">
-                <label for="bank_name" class="form-label">Name of the Bank *</label>
+                <label for="bank_name" class="form-label">Name of the Bank <span class="text-danger">*</span></label>
                 <input type="text" class="form-control" id="bank_name" name="bank_name"
                     value="{{ old('bank_name', $bankDoc['details']['bank_name'] ?? ($application->entityDetails->additional_data['bank_details']['bank_name'] ?? '')) }}" required>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-3">
             <div class="form-group mb-3">
-                <label for="account_holder" class="form-label">Name of Bank Account Holder *</label>
+                <label for="account_holder" class="form-label">Name of Bank Account Holder <span class="text-danger">*</span></label>
                 <input type="text" class="form-control" id="account_holder" name="account_holder"
                     value="{{ old('account_holder', $bankDoc['details']['account_holder'] ?? ($application->entityDetails->additional_data['bank_details']['account_holder'] ?? '')) }}" required>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-6">
+    
+        <div class="col-md-3">
             <div class="form-group mb-3">
-                <label for="account_number" class="form-label">Account Number *</label>
+                <label for="account_number" class="form-label">Account Number <span class="text-danger">*</span></label>
                 <input type="text" class="form-control" id="account_number" name="account_number"
                     value="{{ old('account_number', $bankDoc['details']['account_number'] ?? ($application->entityDetails->additional_data['bank_details']['account_number'] ?? '')) }}" required>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-3">
             <div class="form-group mb-3">
-                <label for="ifsc_code" class="form-label">IFSC Code of Bank *</label>
+                <label for="ifsc_code" class="form-label">IFSC Code of Bank <span class="text-danger">*</span></label>
                 <input type="text" class="form-control" id="ifsc_code" name="ifsc_code"
                     value="{{ old('ifsc_code', $bankDoc['details']['ifsc_code'] ?? ($application->entityDetails->additional_data['bank_details']['ifsc_code'] ?? '')) }}" required>
             </div>
@@ -669,7 +668,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="form-group mb-3">
-                <label class="form-label">Upload Bank Document (Passbook/Cancelled Cheque) *</label>
+                <label class="form-label">Upload Bank Document (Passbook/Cancelled Cheque) <span class="text-danger">*</span></label>
                 <div class="input-group">
                     <input type="file" class="form-control d-none" id="bank_file" name="bank_file" accept=".pdf,.jpg,.jpeg,.png">                    
                     <button type="button" class="btn btn-outline-secondary" id="bank_upload_btn">Upload</button>
@@ -701,33 +700,35 @@
                 @foreach($authPersons as $index => $person)
                 <div class="authorized-person-entry mb-4 border-bottom pb-3">
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="form-group mb-3">
-                                <label class="form-label">Name *</label>
+                                <label class="form-label">Name <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" name="auth_person_name[]" value="{{ old("auth_person_name.$index", $person['name'] ?? '') }}" data-required-if-filled>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="form-group mb-3">
-                                <label class="form-label">Contact Number *</label>
+                                <label class="form-label">Contact Number <span class="text-danger">*</span></label>
                                 <input type="tel" class="form-control" name="auth_person_contact[]" value="{{ old("auth_person_contact.$index", $person['contact'] ?? '') }}" data-required-if-filled>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="form-group mb-3">
                                 <label class="form-label">Email Address</label>
                                 <input type="email" class="form-control" name="auth_person_email[]" value="{{ old("auth_person_email.$index", $person['email'] ?? '') }}">
                             </div>
                         </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Relation with Owner/Entity <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" name="auth_person_relation[]" value="{{ old("auth_person_relation.$index", $person['relation'] ?? '') }}" data-required-if-filled>
+                    
+                        </div>
                     </div>
                     <div class="form-group mb-3">
-                        <label class="form-label">Full Address *</label>
+                        <label class="form-label">Full Address <span class="text-danger">*</span></label>
                         <textarea class="form-control" name="auth_person_address[]" rows="2" data-required-if-filled>{{ old("auth_person_address.$index", $person['address'] ?? '') }}</textarea>
                     </div>
-                    <div class="form-group mb-3">
-                        <label class="form-label">Relation with Owner/Entity *</label>
-                        <input type="text" class="form-control" name="auth_person_relation[]" value="{{ old("auth_person_relation.$index", $person['relation'] ?? '') }}" data-required-if-filled>
-                    </div>
+                    
                     <button type="button" class="btn btn-sm btn-danger" onclick="removeAuthorizedPerson(this)">Remove</button>
                 </div>
                 @endforeach
@@ -863,35 +864,34 @@
             newEntry.className = 'partner-entry mb-4 border-bottom pb-3';
             newEntry.innerHTML = `
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="form-group mb-3">
-                            <label class="form-label">Partner Name *</label>
+                            <label class="form-label">Partner Name <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" name="partner_name[]" required>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="form-group mb-3">
-                            <label class="form-label">Father's/Husband's Name *</label>
+                            <label class="form-label">Father's/Husband's Name <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" name="partner_father_name[]" required>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="form-group mb-3">
-                            <label class="form-label">Contact Number *</label>
+                            <label class="form-label">Contact Number <span class="text-danger">*</span></label>
                             <input type="tel" class="form-control" name="partner_contact[]" required>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-3">
                         <div class="form-group mb-3">
-                            <label class="form-label">Email Address *</label>
+                            <label class="form-label">Email Address <span class="text-danger">*</span></label>
                             <input type="email" class="form-control" name="partner_email[]" required>
                         </div>
                     </div>
-                    <div class="col-md-6">
+            
+                    <div class="col-md-12">
                         <div class="form-group mb-3">
-                            <label class="form-label">Full Address *</label>
+                            <label class="form-label">Full Address <span class="text-danger">*</span></label>
                             <textarea class="form-control" name="partner_address[]" rows="2" required></textarea>
                         </div>
                     </div>
@@ -918,25 +918,25 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group mb-3">
-                            <label class="form-label">Partner Name *</label>
+                            <label class="form-label">Partner Name <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" name="llp_partner_name[]" required>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group mb-3">
-                            <label class="form-label">DPIN Number *</label>
+                            <label class="form-label">DPIN Number <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" name="llp_partner_dpin[]" required>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group mb-3">
-                            <label class="form-label">Contact Number *</label>
+                            <label class="form-label">Contact Number <span class="text-danger">*</span></label>
                             <input type="tel" class="form-control" name="llp_partner_contact[]" required>
                         </div>
                     </div>
                 </div>
                 <div class="form-group mb-3">
-                    <label class="form-label">Full Address *</label>
+                    <label class="form-label">Full Address <span class="text-danger">*</span></label>
                     <textarea class="form-control" name="llp_partner_address[]" rows="2" required></textarea>
                 </div>
                 <button type="button" class="btn btn-sm btn-danger" onclick="removeLLPPartner(this)">Remove</button>
@@ -961,25 +961,25 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group mb-3">
-                            <label class="form-label">Director Name *</label>
+                            <label class="form-label">Director Name <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" name="director_name[]" required>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group mb-3">
-                            <label class="form-label">DIN Number *</label>
+                            <label class="form-label">DIN Number <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" name="director_din[]" required>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group mb-3">
-                            <label class="form-label">Contact Number *</label>
+                            <label class="form-label">Contact Number <span class="text-danger">*</span></label>
                             <input type="tel" class="form-control" name="director_contact[]" required>
                         </div>
                     </div>
                 </div>
                 <div class="form-group mb-3">
-                    <label class="form-label">Full Address *</label>
+                    <label class="form-label">Full Address <span class="text-danger">*</span></label>
                     <textarea class="form-control" name="director_address[]" rows="2" required></textarea>
                 </div>
                 <button type="button" class="btn btn-sm btn-danger" onclick="removeDirector(this)">Remove</button>
@@ -1004,25 +1004,25 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group mb-3">
-                            <label class="form-label">Member Name *</label>
+                            <label class="form-label">Member Name <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" name="committee_name[]" required>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group mb-3">
-                            <label class="form-label">Designation *</label>
+                            <label class="form-label">Designation <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" name="committee_designation[]" required>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group mb-3">
-                            <label class="form-label">Contact Number *</label>
+                            <label class="form-label">Contact Number <span class="text-danger">*</span></label>
                             <input type="tel" class="form-control" name="committee_contact[]" required>
                         </div>
                     </div>
                 </div>
                 <div class="form-group mb-3">
-                    <label class="form-label">Full Address *</label>
+                    <label class="form-label">Full Address <span class="text-danger">*</span></label>
                     <textarea class="form-control" name="committee_address[]" rows="2" required></textarea>
                 </div>
                 <button type="button" class="btn btn-sm btn-danger" onclick="removeCommitteeMember(this)">Remove</button>
@@ -1047,25 +1047,25 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group mb-3">
-                            <label class="form-label">Trustee Name *</label>
+                            <label class="form-label">Trustee Name <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" name="trustee_name[]" required>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group mb-3">
-                            <label class="form-label">Designation *</label>
+                            <label class="form-label">Designation <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" name="trustee_designation[]" required>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group mb-3">
-                            <label class="form-label">Contact Number *</label>
+                            <label class="form-label">Contact Number <span class="text-danger">*</span></label>
                             <input type="tel" class="form-control" name="trustee_contact[]" required>
                         </div>
                     </div>
                 </div>
                 <div class="form-group mb-3">
-                    <label class="form-label">Full Address *</label>
+                    <label class="form-label">Full Address <span class="text-danger">*</span></label>
                     <textarea class="form-control" name="trustee_address[]" rows="2" required></textarea>
                 </div>
                 <button type="button" class="btn btn-sm btn-danger" onclick="removeTrustee(this)">Remove</button>
@@ -1090,13 +1090,13 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group mb-3">
-                            <label class="form-label">Name *</label>
+                            <label class="form-label">Name <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" name="auth_person_name[]" data-required-if-filled>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group mb-3">
-                            <label class="form-label">Contact Number *</label>
+                            <label class="form-label">Contact Number <span class="text-danger">*</span></label>
                             <input type="tel" class="form-control" name="auth_person_contact[]" data-required-if-filled>
                         </div>
                     </div>
@@ -1108,11 +1108,11 @@
                     </div>
                 </div>
                 <div class="form-group mb-3">
-                    <label class="form-label">Full Address *</label>
+                    <label class="form-label">Full Address <span class="text-danger">*</span></label>
                     <textarea class="form-control" name="auth_person_address[]" rows="2" data-required-if-filled></textarea>
                 </div>
                 <div class="form-group mb-3">
-                    <label class="form-label">Relation with Owner/Entity *</label>
+                    <label class="form-label">Relation with Owner/Entity <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" name="auth_person_relation[]" data-required-if-filled>
                 </div>
                 <button type="button" class="btn btn-sm btn-danger" onclick="removeAuthorizedPerson(this)">Remove</button>

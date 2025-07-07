@@ -2,9 +2,9 @@
     <h5 class="mb-4">Basic Details</h5>
     <div class="row">
         <!-- Territory Dropdown -->
-        <div class="col-md-3">
+        <div class="col-md-2">
             <div class="form-group mb-3">
-                <label for="territory" class="form-label">Territory *</label>
+                <label for="territory" class="form-label">Territory <span class="text-danger">*</span></label>
                 <select class="form-control" id="territory" name="territory" required onchange="updateDependentFields()">
                     <option value="">Select Territory</option>
                     @foreach($territory_list as $id => $name)
@@ -20,7 +20,7 @@
         <!-- Region Field -->
         <div class="col-md-2">
             <div class="form-group mb-3">
-                <label class="form-label">Region *</label>
+                <label class="form-label">Region <span class="text-danger">*</span></label>
                 <input type="text" class="form-control" id="region_display" readonly
                     value="{{ isset($application) && $application->region && isset($region_list[$application->region]) ? $region_list[$application->region] : (isset($preselected['region']) && isset($region_list[$preselected['region']]) ? $region_list[$preselected['region']] : '') }}">
                 <input type="hidden" name="region_id" id="region_id"
@@ -31,7 +31,7 @@
         <!-- Zone Field -->
         <div class="col-md-2">
             <div class="form-group mb-3">
-                <label class="form-label">Zone *</label>
+                <label class="form-label">Zone <span class="text-danger">*</span></label>
                 <input type="text" class="form-control" id="zone_display" readonly
                     value="{{ isset($application) && $application->zone && isset($zone_list[$application->zone]) ? $zone_list[$application->zone] : (isset($preselected['zone']) && isset($zone_list[$preselected['zone']]) ? $zone_list[$preselected['zone']] : '') }}">
                 <input type="hidden" name="zone_id" id="zone_id"
@@ -39,9 +39,9 @@
             </div>
         </div>
         <!-- Business Unit Dropdown -->
-        <div class="col-md-3">
+        <div class="col-md-2">
             <div class="form-group mb-3">
-                <label class="form-label">Business Unit *</label>
+                <label class="form-label">Business Unit <span class="text-danger">*</span></label>
                 <input type="text" class="form-control" id="bu_display" readonly
                     value="{{ isset($application) && $application->bu && isset($bu_list[$application->bu]) ? $bu_list[$application->bu] : (isset($preselected['bu']) && isset($bu_list[$preselected['bu']]) ? $bu_list[$preselected['bu']] : '') }}">
                 <input type="hidden" name="bu_id" id="bu_id"
@@ -51,7 +51,7 @@
         <!-- Crop Vertical -->
         <div class="col-md-2">
             <div class="form-group mb-3">
-                <label for="crop_vertical" class="form-label">Crop Vertical *</label>
+                <label for="crop_vertical" class="form-label">Crop Vertical <span class="text-danger">*</span></label>
                 <select class="form-control" id="crop_vertical" name="crop_vertical" required>
                     @foreach($crop_type as $id => $name)
                         <option value="{{ $id }}"
@@ -65,9 +65,9 @@
     </div>
 
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-3">
             <div class="form-group mb-3">
-                <label for="dis_state" class="form-label">State *</label>
+                <label for="dis_state" class="form-label">State <span class="text-danger">*</span></label>
                 <select class="form-control" id="dis_state" name="dis_state" required>
                     <option value="">Select State</option>
                     @foreach($states as $state)
@@ -79,9 +79,9 @@
                 </select>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-3">
             <div class="form-group mb-3">
-                <label for="district" class="form-label">District *</label>
+                <label for="district" class="form-label">District <span class="text-danger">*</span></label>
                 <select class="form-control" id="district" name="district" required>
                     <option value="">Select District</option>
                     @if(isset($application) && $application->district)

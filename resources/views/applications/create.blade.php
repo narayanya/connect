@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>New Distributor Application</h4>
+                    <h5>New Distributor Application</h5>
                 </div>
                 <div class="card-body">
                     @include('components.stepper', ['steps' => [

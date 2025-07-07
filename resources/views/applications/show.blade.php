@@ -603,26 +603,26 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group ">
-                            <label class="form-label">Net Worth (Previous FY)</label>
+                            <label class="form-label">Net Worth (Previous FY):</label>
                             <span>{{ $application->financialInfo->net_worth ?? 'N/A' }}</span>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label class="form-label">Shop Ownership</label>
+                            <label class="form-label">Shop Ownership:</label>
                             <span>{{ $application->financialInfo->shop_ownership ?? 'N/A' }}</span>
                         </div>
                     </div>
              
                     <div class="col-md-4">
                         <div class="form-group ">
-                            <label class="form-label">Godown Area & Ownership</label>
+                            <label class="form-label">Godown Area & Ownership:</label>
                             <span>{{ $application->financialInfo->godown_area ?? 'N/A' }}</span>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label class="form-label">Years in Business</label>
+                            <label class="form-label">Years in Business:</label>
                             <span>{{ $application->financialInfo->years_in_business ?? 'N/A' }}</span>
                         </div>
                     </div>
@@ -661,8 +661,13 @@
             </div>
 </div>
             <!-- Step 6: Existing Distributorships -->
-            <div id="existing-distributorships" class="form-section">
-                <h5 class="mb-4">Existing Distributorships (Agro Inputs)</h5>
+        <div class="row">
+            <div id="existing-distributorships" class="col-md-12">
+                <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    Existing Distributorships (Agro Inputs)
+                </div>
+                <div class="card-body">
                 @if($application->existingDistributorships->isEmpty())
                 <p class="text-muted">No existing distributorships provided.</p>
                 @else
@@ -682,95 +687,94 @@
                 </table>
                 @endif
             </div>
+                </div>
+            </div>
+        
 
             <!-- Step 7: Bank Details -->
-            <div id="bank-details" class="form-section">
-                <h5 class="mb-4">Bank Details</h5>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group mb-3">
-                            <label class="form-label">Financial Status</label>
-                            <input type="text" class="form-control" readonly
-                                value="{{ $application->bankDetail->financial_status ?? 'N/A' }}">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group mb-3">
-                            <label class="form-label">No. of Retailers Dealt With</label>
-                            <input type="text" class="form-control" readonly
-                                value="{{ $application->bankDetail->retailer_count ?? 'N/A' }}">
-                        </div>
-                    </div>
+            <div id="bank-details" class="col-md-12">
+                <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    Bank Details
                 </div>
+                <div class="card-body">
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group mb-3">
-                            <label class="form-label">Bank Name</label>
-                            <input type="text" class="form-control" readonly
-                                value="{{ $application->bankDetail->bank_name ?? 'N/A' }}">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="form-label">Financial Status:</label>
+                            <span>{{ $application->bankDetail->financial_status ?? 'N/A' }}</span>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group mb-3">
-                            <label class="form-label">Account Holder Name</label>
-                            <input type="text" class="form-control" readonly
-                                value="{{ $application->bankDetail->account_holder ?? 'N/A' }}">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="form-label">No. of Retailers Dealt With:</label>
+                            <span>{{ $application->bankDetail->retailer_count ?? 'N/A' }}</span>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group mb-3">
-                            <label class="form-label">Account Number</label>
-                            <input type="text" class="form-control" readonly
-                                value="{{ $application->bankDetail->account_number ?? 'N/A' }}">
+              
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="form-label">Bank Name:</label>
+                            <span>{{ $application->bankDetail->bank_name ?? 'N/A' }}</span>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group mb-3">
-                            <label class="form-label">IFSC Code</label>
-                            <input type="text" class="form-control" readonly
-                                value="{{ $application->bankDetail->ifsc_code ?? 'N/A' }}">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="form-label">Account Holder Name:</label>
+                            <span>{{ $application->bankDetail->account_holder ?? 'N/A' }}</span>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group mb-3">
-                            <label class="form-label">Account Type</label>
-                            <input type="text" class="form-control" readonly
-                                value="{{ $application->bankDetail->account_type ?? 'N/A' }}">
+                
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="form-label">Account Number:</label>
+                            <span>{{ $application->bankDetail->account_number ?? 'N/A' }}</span>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group mb-3">
-                            <label class="form-label">Relationship Duration (Years)</label>
-                            <input type="text" class="form-control" readonly
-                                value="{{ $application->bankDetail->relationship_duration ?? 'N/A' }}">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="form-label">IFSC Code:</label>
+                            <span>{{ $application->bankDetail->ifsc_code ?? 'N/A' }}</span>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group mb-3">
-                            <label class="form-label">OD Limit (if any)</label>
-                            <input type="text" class="form-control" readonly
-                                value="{{ $application->bankDetail->od_limit ?? 'N/A' }}">
+                
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="form-label">Account Type:</label>
+                            <span>{{ $application->bankDetail->account_type ?? 'N/A' }}</span>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group mb-3">
-                            <label class="form-label">OD Security</label>
-                            <input type="text" class="form-control" readonly
-                                value="{{ $application->bankDetail->od_security ?? 'N/A' }}">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="form-label">Relationship Duration (Years):</label>
+                            <span>{{ $application->bankDetail->relationship_duration ?? 'N/A' }}</span>
+                        </div>
+                    </div>
+                
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="form-label">OD Limit (if any):</label>
+                            <span>{{ $application->bankDetail->od_limit ?? 'N/A' }}</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="form-label">OD Security:</label>
+                            <span>{{ $application->bankDetail->od_security ?? 'N/A' }}</span>
                         </div>
                     </div>
                 </div>
             </div>
+                </div>
+           
 
             <!-- Step 8: Declarations -->
-            <div id="declarations" class="form-section">
-                <h5 class="mb-4">Declarations</h5>
+            <div id="declarations" class="col-md-12">
+                <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    Declarations
+                </div>
+                <div class="card-body">
                 @php
                     $questions = [
                         'is_other_distributor' => [
@@ -848,8 +852,8 @@
 
                 <div class="card mb-3">
                     <div class="card-body">
-                        <h6 class="mb-3">{{ $config['label'] }}</h6>
-                        <p><strong>Answer:</strong> {{ $hasIssue ? 'Yes' : 'No' }}</p>
+                        <h6 class="mb-2">{{ $config['label'] }}</h6>
+                        <p class="mb-0"><strong>Answer:</strong> {{ $hasIssue ? 'Yes' : 'No' }}</p>
                         @if($hasIssue && !empty($details))
                         @if(isset($config['details_field']))
                         <div class="form-group mb-3">
@@ -889,37 +893,44 @@
                     </div>
                 </div>
             </div>
-
+            </div>    
             <!-- Approval Logs -->
-            <div id="approval-logs" class="form-section">
-                <h5 class="mb-4">Approval Logs</h5>
-                @if($application->approvalLogs->isEmpty())
-                <p class="text-muted">No approval logs available.</p>
-                @else
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>User</th>
-                            <th>Action</th>
-                            <th>Remarks</th>
-                            <th>Date</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($application->approvalLogs as $log)
-                        <tr>
-                            <td>{{ $log->user->name ?? 'N/A' }}</td>
-                            <td>{{ $log->action ?? 'N/A' }}</td>
-                            <td>{{ $log->remarks ?? 'N/A' }}</td>
-                            <td>{{ $log->created_at->format('d-M-Y H:i') }}</td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-                @endif
+            <div id="approval-logs" class="col-md-12">
+                <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    Approval Logs
+                </div>
+                <div class="card-body">
+                    @if($application->approvalLogs->isEmpty())
+                    <p class="text-muted">No approval logs available.</p>
+                    @else
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Action</th>
+                                <th>Remarks</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($application->approvalLogs as $log)
+                            <tr>
+                                <td>{{ $log->user->name ?? 'N/A' }}</td>
+                                <td>{{ $log->action ?? 'N/A' }}</td>
+                                <td>{{ $log->remarks ?? 'N/A' }}</td>
+                                <td>{{ $log->created_at->format('d-M-Y H:i') }}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                    @endif
+                </div>
+                </div>
             </div>
         </div>
     </div>
+            
 @if(auth()->user()->emp_id === $application->current_approver_id)
 <div class="card mt-4">
     <div class="card-header">
