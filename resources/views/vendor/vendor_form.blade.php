@@ -2,11 +2,11 @@
 
 @push('breadcrumb')
     <li class="breadcrumb-item">Form</li>
-    <li class="breadcrumb-item active">vendor</li>
+    <li class="breadcrumb-item active">Vendor</li>
 @endpush
 
 @push('page-title')
-    vendor
+    Vendor
 @endpush
 
 @push('page-back-button')
@@ -55,7 +55,7 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center">
-                <h4 class="card-title mb-0">{{ isset($data->id) ? 'Update' : 'Add New' }} vendor</h4>
+                <h4 class="card-title mb-0">{{ isset($data->id) ? 'Update' : 'Add New' }} Vendor</h4>
                 @can('delete-Vendor')
                     @if(isset($data->id))
                         <a href="javascript:void(0)" data-link="{{ route('vendor.destroy', $data->id) }}" data-id="{{ $data->id }}" class="btn btn-sm btn-outline-danger js-ak-delete-link">
@@ -83,7 +83,7 @@
                     <div class="row">
                         <div class="col-12 mb-3">
     <div class="form-group">
-        <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+        <label for="email" class="form-label">Email ID<span class="text-danger">*</span></label>
         <input type="email" class="form-control  required" 
                id="email" name="email" 
                placeholder="Email" required  
@@ -101,7 +101,7 @@
     </div>
 </div><div class="col-12 mb-3">
     <div class="form-group">
-        <label for="company_name" class="form-label">Company name <span class="text-danger">*</span></label>
+        <label for="company_name" class="form-label">Company Name <span class="text-danger">*</span></label>
         <input type="text" class="form-control  required" 
                id="company_name" name="company_name" 
                placeholder="Company name" required  
@@ -204,7 +204,7 @@
     </div>
 </div><div class="col-12 mb-3">
     <div class="form-group">
-        <label for="contact_person_name" class="form-label">Contact person Name <span class="text-danger">*</span></label>
+        <label for="contact_person_name" class="form-label">Contact Person Name <span class="text-danger">*</span></label>
         <input type="text" class="form-control  required" 
                id="contact_person_name" name="contact_person_name" 
                placeholder="Contact person Name" required  
@@ -294,10 +294,10 @@
                     </div>
                     
                     <div class="d-flex justify-content-end gap-2 mt-3">
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" class="btn btn-success btn-sm">
                             <i class="ri-save-line"></i> Save
                         </button>
-                        <a href="{{ $cancel_route ?? route('vendor.index') }}" class="btn btn-secondary">Cancel</a>
+                        <a href="{{ $cancel_route ?? route('vendor.index') }}" class="btn btn-light btn-sm">Cancel</a>
                     </div>
                 </form>
             </div>

@@ -28,11 +28,11 @@
                     <div class="row g-4 align-items-center">
                         <div class="col-sm-auto ms-auto">
                             <div class="hstack gap-2">
-                                <button type="button" class="btn btn-success add-btn" data-bs-toggle="modal"
+                                <button type="button" class="btn btn-success add-btn btn-sm" data-bs-toggle="modal"
                                     data-bs-target="#AddNewRoleModal"><i class="ri-add-line align-bottom me-1"></i> Add
                                     Role
                                 </button>
-                                <a class="btn btn-primary" href="{{ route('permission') }}" target="_blank">Permission
+                                <a class="btn btn-primary btn-sm" href="{{ route('permission') }}" target="_blank">Permission
                                     List</a>
                             </div>
                         </div>

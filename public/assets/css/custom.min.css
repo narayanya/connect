@@ -1,8 +1,59 @@
 
 /*# sourceMappingURL=custom.min.css.map */
 table thead th{
-    font-size: 12px;
+    font-size: 11px !important;
 }
 table tbody td{
+    font-size: 11px !important;
+    padding: 5px !important;
+}
+.breadcrumb{
     font-size: 12px;
+}
+.form-label, .form-control-sm, .form-select-sm{
+    font-size: 12px !important;
+}
+.card-header{
+    padding: 9px 1rem !important;
+}
+.dataTable thead th, thead th{
+    text-transform: none !important;
+}
+.offcanvas, .offcanvas-lg, .offcanvas-md, .offcanvas-sm, .offcanvas-xl, .offcanvas-xxl{
+        --vz-offcanvas-width: 270px;
+}
+.form-select{
+    padding: 7px;
+    line-height: 1.0;
+}
+.search-form{
+        line-height: 1.0;
+    height: 30px;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+:root, [data-bs-theme=light] 
+{
+    --vz-primary:#358176;
+    --vz-primary-text-emphasis: #266057;
+}
+[data-theme=default][data-sidebar=dark]
+{
+--vz-vertical-menu-item-color: #72e7d3;
+}
+.navbar-menu .navbar-nav .nav-sm .nav-link{
+    color: #b3dfd8;
+}
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active{
+
+}
+.page-title-box{
+    margin-bottom: 10px;
+}
+.form-control{
+    padding: 5px 10px;
+}
+.bg-primary {
+    --vz-bg-opacity: 1;
+    background-color: rgb(64 128 118) !important;
 }

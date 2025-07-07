@@ -50,12 +50,12 @@
             <div class="card-header d-flex justify-content-between align-items-center">
                 <h4 class="card-title mb-0">Business Nature List</h4>
                 <div class="d-flex align-items-center">
-                    <form class="d-flex me-3" role="search">
+                    <form class="d-flex me-3" role="search" style="margin-bottom:0px;">
                         <input type="hidden" name="business_nature_source" value="business_nature">
                         <input type="hidden" name="business_nature_length" value="{{ Request()->query('business_nature_length') }}">
-                        <div class="input-group">
-                            <input type="text" class="form-control" name="business_nature_search" placeholder="Search" value="{{ Request()->query('business_nature_source') == 'business_nature' ? Request()->query('business_nature_search') ?? '' : '' }}" autocomplete="off">
-                            <button class="btn btn-outline-primary" type="submit">
+                        <div class="input-group" >
+                            <input type="text" class="form-control search-form" name="business_nature_search" placeholder="Search" value="{{ Request()->query('business_nature_source') == 'business_nature' ? Request()->query('business_nature_search') ?? '' : '' }}" autocomplete="off">
+                            <button class="btn btn-outline-primary" type="submit" style="padding: 4px 10px;">
                                 <i class="ri-search-line"></i>
                             </button>
                             @if(Request()->query('business_nature_source') == 'business_nature' && Request()->query('business_nature_search'))
@@ -66,7 +66,7 @@
                         </div>
                     </form>
                     @can('add-BusinessNature')
-                        <a href="{{ route('business_nature.create') }}" class="btn btn-primary">
+                        <a href="{{ route('business_nature.create') }}" class="btn btn-primary btn-sm">
                             <i class="ri-add-line"></i> Add New
                         </a>
                     @endcan
@@ -90,12 +90,12 @@
 
                                     <td class="text-center">
                                         @can('edit-BusinessNature')
-                                            <a href="{{ route('business_nature.edit', $data->id) }}" class="btn btn-sm btn-outline-primary me-1">
+                                            <a style="padding:1px 5px;" href="{{ route('business_nature.edit', $data->id) }}" class="btn btn-sm btn-outline-primary me-1">
                                                 <i class="ri-edit-line"></i>
                                             </a>
                                         @endcan
                                         @can('delete-BusinessNature')
-                                            <a href="javascript:void(0)" data-link="{{ route('business_nature.destroy', $data->id) }}" class="btn btn-sm btn-outline-danger js-ak-delete-link">
+                                            <a style="padding:1px 5px;" href="javascript:void(0)" data-link="{{ route('business_nature.destroy', $data->id) }}" class="btn btn-sm btn-outline-danger js-ak-delete-link">
                                                 <i class="ri-delete-bin-line"></i>
                                             </a>
                                         @endcan

@@ -2,11 +2,11 @@
 
 @push('breadcrumb')
     <li class="breadcrumb-item">Form</li>
-    <li class="breadcrumb-item active">gender</li>
+    <li class="breadcrumb-item active">Gender</li>
 @endpush
 
 @push('page-title')
-    gender
+    Gender
 @endpush
 
 @push('page-back-button')
@@ -53,9 +53,10 @@
 
 @section('content')
     <div class="container-fluid">
+        <div class="col-md-6">
         <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center">
-                <h4 class="card-title mb-0">{{ isset($data->id) ? 'Update' : 'Add New' }} gender</h4>
+                <h4 class="card-title mb-0">{{ isset($data->id) ? 'Update' : 'Add New' }} Gender</h4>
                 @can('delete-Gender')
                     @if(isset($data->id))
                         <a href="javascript:void(0)" data-link="{{ route('gender.destroy', $data->id) }}" data-id="{{ $data->id }}" class="btn btn-sm btn-outline-danger js-ak-delete-link">
@@ -103,13 +104,14 @@
                     </div>
                     
                     <div class="d-flex justify-content-end gap-2 mt-3">
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" class="btn btn-success btn-sm">
                             <i class="ri-save-line"></i> Save
                         </button>
-                        <a href="{{ $cancel_route ?? route('gender.index') }}" class="btn btn-secondary">Cancel</a>
+                        <a href="{{ $cancel_route ?? route('gender.index') }}" class="btn btn-light btn-sm">Cancel</a>
                     </div>
                 </form>
             </div>
+        </div>
         </div>
     </div>
 @endsection

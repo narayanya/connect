@@ -10,7 +10,7 @@
                     <h4 class="mb-0">My Applications</h4>
                     @if(auth()->user()->emp_id)
                     <a href="{{ route('applications.create') }}" class="btn btn-primary btn-sm">
-                        <i class="fas fa-plus"></i> New Application
+                        <i class="ri-add-line"></i>Add New Application
                     </a>
                     @endif
                 </div>
@@ -44,7 +44,7 @@
                                         </td>
                                         <td>{{ $application->created_at->format('d-M-Y') }}</td>
                                         <td>
-                                            <a href="{{ route('applications.show', $application) }}" class="btn btn-lg btn-info">
+                                            <a href="{{ route('applications.show', $application) }}" class="btn btn-sm btn-info">
                                                 <i class="bx bx-show fs-14"></i>
                                             </a>
                                             @if(in_array($application->status, ['draft', 'reverted']))

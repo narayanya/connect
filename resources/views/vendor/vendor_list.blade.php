@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @push('breadcrumb')
-    <li class="breadcrumb-item active">vendor</li>
+    <li class="breadcrumb-item active">Vendor</li>
 @endpush
 
 @push('page-title')
-    vendor
+    Vendor
 @endpush
 
 @push('scripts')
@@ -48,14 +48,14 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center">
-                <h4 class="card-title mb-0">vendor List</h4>
+                <h4 class="card-title mb-0">Vendor List</h4>
                 <div class="d-flex align-items-center">
-                    <form class="d-flex me-3" role="search">
+                    <form class="d-flex me-3" role="search" style="margin-bottom:0px;">
                         <input type="hidden" name="vendor_source" value="vendor">
                         <input type="hidden" name="vendor_length" value="{{ Request()->query('vendor_length') }}">
                         <div class="input-group">
-                            <input type="text" class="form-control" name="vendor_search" placeholder="Search" value="{{ Request()->query('vendor_source') == 'vendor' ? Request()->query('vendor_search') ?? '' : '' }}" autocomplete="off">
-                            <button class="btn btn-outline-primary" type="submit">
+                            <input type="text" class="form-control search-form" name="vendor_search" placeholder="Search" value="{{ Request()->query('vendor_source') == 'vendor' ? Request()->query('vendor_search') ?? '' : '' }}" autocomplete="off">
+                            <button class="btn btn-outline-primary" type="submit" style="padding: 4px 10px;">
                                 <i class="ri-search-line"></i>
                             </button>
                             @if(Request()->query('vendor_source') == 'vendor' && Request()->query('vendor_search'))
@@ -66,7 +66,7 @@
                         </div>
                     </form>
                     @can('add-Vendor')
-                        <a href="{{ route('vendor.create') }}" class="btn btn-primary">
+                        <a href="{{ route('vendor.create') }}" class="btn btn-primary btn-sm">
                             <i class="ri-add-line"></i> Add New
                         </a>
                     @endcan
@@ -78,7 +78,7 @@
                         <thead>
                             <tr>
                                 <th scope="col">ID</th>
-                                   <th>Email</th>   <th>Company name</th>   <th>Nauture Of Business</th>   <th>Purpose Of Transaction with company</th>   <th>Company's Address</th>   <th>Pincode</th>   <th>Vendor Email Id</th>   <th>Contact person Name</th>   <th>Contact No.</th>   <th>Contact Person Name</th>   <th>Payment Terms</th>   <th>Gender</th>
+                                   <th>Email</th>   <th>Company Name</th>   <th>Nauture Of Business</th>   <th>Purpose Of Transaction with company</th>   <th>Company's Address</th>   <th>Pincode</th>   <th>Vendor Email Id</th>   <th>Contact Person Name</th>   <th>Contact No.</th>   <th>Contact Person Name</th>   <th>Payment Terms</th>   <th>Gender</th>
                                 <th scope="col" class="text-center">Actions</th>
                             </tr>
                         </thead>
@@ -101,12 +101,12 @@
 
                                     <td class="text-center">
                                         @can('edit-Vendor')
-                                            <a href="{{ route('vendor.edit', $data->id) }}" class="btn btn-sm btn-outline-primary me-1">
+                                            <a style="padding:1px 5px;" href="{{ route('vendor.edit', $data->id) }}" class="btn btn-sm btn-outline-primary me-1">
                                                 <i class="ri-edit-line"></i>
                                             </a>
                                         @endcan
                                         @can('delete-Vendor')
-                                            <a href="javascript:void(0)" data-link="{{ route('vendor.destroy', $data->id) }}" class="btn btn-sm btn-outline-danger js-ak-delete-link">
+                                            <a style="padding:1px 5px;" href="javascript:void(0)" data-link="{{ route('vendor.destroy', $data->id) }}" class="btn btn-sm btn-outline-danger js-ak-delete-link">
                                                 <i class="ri-delete-bin-line"></i>
                                             </a>
                                         @endcan

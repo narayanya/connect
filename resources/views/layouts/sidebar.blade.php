@@ -17,7 +17,7 @@
                 <img src="{{ asset('assets/images/logo-sm.png') }}" alt="" style="height:22px !important;">
             </span>
             <span class="logo-lg">
-                <img src="{{ asset('assets/images/connect-logo.png') }}" alt="" style="height:25px !important;">
+                <img src="{{ asset('assets/images/connect-logo.png') }}" alt="" style="height:24px !important;">
             </span>
         </a>
         <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
@@ -253,7 +253,7 @@
                 <li class="nav-item">
                     <a class="nav-link menu-link {{ request()->routeIs('applications.*') ? 'active' : '' }}" 
                     href="{{ route('applications.index') }}">
-                        <i class="ri-file-list-3-line"></i> <span>Applications</span>
+                        <i class="ri-apps-line"></i> <span>Applications</span>
                     </a>
                 </li>
        @can('menu-builder')

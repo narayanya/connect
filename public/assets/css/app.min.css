@@ -3129,7 +3129,7 @@
 
 .page-title-box h4 {
     font-weight: 700;
-    font-size: 15px !important;
+    font-size: 13px !important;
     text-transform: uppercase
 }
 
@@ -7105,7 +7105,7 @@ code {
 :root {
     --vz-card-logo-dark: block;
     --vz-card-logo-light: none;
-    --vz-vertical-menu-width: 190px;
+    --vz-vertical-menu-width: 180px;
     --vz-vertical-menu-width-md: 180px;
     --vz-vertical-menu-width-sm: 70px;
     --vz-vertical-menu-item-font-family: var(--vz-font-family-primary);
@@ -8430,7 +8430,7 @@ a, button {
 }
 
 .card-title {
-    font-size: 16px;
+    font-size: 14px;
     margin: 0 0 7px 0
 }
 

@@ -53,6 +53,7 @@
 
 @section('content')
     <div class="container-fluid">
+        <div class="col-md-6">
         <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center">
                 <h4 class="card-title mb-0">{{ isset($data->id) ? 'Update' : 'Add New' }} Legal Status</h4>
@@ -103,13 +104,14 @@
                     </div>
                     
                     <div class="d-flex justify-content-end gap-2 mt-3">
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" class="btn btn-success btn-sm">
                             <i class="ri-save-line"></i> Save
                         </button>
-                        <a href="{{ $cancel_route ?? route('legal_status.index') }}" class="btn btn-secondary">Cancel</a>
+                        <a href="{{ $cancel_route ?? route('legal_status.index') }}" class="btn btn-light btn-sm">Cancel</a>
                     </div>
                 </form>
             </div>
         </div>
+    </div>
     </div>
 @endsection

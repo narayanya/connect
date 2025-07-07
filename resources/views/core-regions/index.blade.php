@@ -24,10 +24,10 @@
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <h5 class="card-title mb-0">Region Records</h5>
                     <div>
-                        <button type="button" class="btn btn-info" data-bs-toggle="offcanvas" href="#FilterCanvas">
+                        <button type="button" class="btn btn-info btn-sm" data-bs-toggle="offcanvas" href="#FilterCanvas">
                             <i class="ri-filter-3-line align-bottom me-1"></i> Filters
                         </button>
-                        <a href="{{ route('regions.export') }}" class="btn btn-success">
+                        <a href="{{ route('regions.export') }}" class="btn btn-success btn-sm">
                             <i class="fas fa-file-excel me-1"></i> Export Excel
                         </a>
                     </div>
@@ -56,14 +56,14 @@
 
     <!-- Filter Offcanvas -->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="FilterCanvas" aria-labelledby="FilterCanvasLabel">
-        <div class="offcanvas-header bg-light">
+        <div class="offcanvas-header bg-light p-3">
             <h5 class="offcanvas-title" id="FilterCanvasLabel">Region Filters</h5>
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <form id="filter-form" class="d-flex flex-column justify-content-end h-100">
             <div class="offcanvas-body">
                 <div class="col-lg-12">
-                    <label for="status_filter" class="form-label">Status:</label>
+                    <label for="status_filter" class="form-label mb-1">Status:</label>
                     <select name="status" id="status_filter" class="form-control form-select" onchange="filter_data();">
                         <option value="">Select Status</option>
                         <option value="1">Active</option>
@@ -71,7 +71,7 @@
                     </select>
                 </div>
                 <div class="col-lg-12 mt-3">
-                    <label for="vertical_filter" class="form-label">Vertical:</label>
+                    <label for="vertical_filter" class="form-label mb-1">Vertical:</label>
                     <select name="vertical_id" id="vertical_filter" class="form-control form-select" onchange="filter_data();">
                         <option value="">Select Vertical</option>
                         @foreach ($verticals as $vertical)
@@ -80,7 +80,7 @@
                     </select>
                 </div>
                 <div class="col-lg-12 mt-3">
-                    <label for="business_type_filter" class="form-label">Business Type:</label>
+                    <label for="business_type_filter" class="form-label mb-1">Business Type:</label>
                     <select name="business_type" id="business_type_filter" class="form-control form-select" onchange="filter_data();">
                         <option value="">Select Business Type</option>
                         @foreach ($business_types as $business_type)
@@ -92,10 +92,10 @@
             <div class="offcanvas-footer border-top p-3 text-center">
                 <div class="row">
                     <div class="col-6">
-                        <button type="button" class="btn btn-primary w-100" id="apply-btn">Apply Filters</button>
+                        <button type="button" class="btn btn-primary btn-sm w-100" id="apply-btn">Apply Filters</button>
                     </div>
                     <div class="col-6">
-                        <button type="button" class="btn btn-light w-100" id="reset-btn">Reset</button>
+                        <button type="button" class="btn btn-light btn-sm w-100" id="reset-btn">Reset</button>
                     </div>
                 </div>
             </div>
