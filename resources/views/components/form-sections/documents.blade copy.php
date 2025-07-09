@@ -37,10 +37,10 @@ $documentTypes = [
                     <small class="form-text text-muted">e.g., Certificate of Incorporation, Partnership Deed, etc.</small>
                     <div class="file-preview text-muted">
                         @if(isset($existingDocuments['business_entity']))
-                            <a href="{{ asset('storage/'.$existingDocuments['business_entity']) }}" target="_blank" class="btn btn-sm btn-outline-primary">
+                            <a title="View Uploaded Document" href="{{ asset('storage/'.$existingDocuments['business_entity']) }}" target="_blank" class="btn btn-sm btn-outline-primary">
                                 View Uploaded Document
                             </a>
-                            <button type="button" class="btn btn-sm btn-outline-danger remove-document" data-type="business_entity">
+                            <button title="Remove" type="button" class="btn btn-sm btn-outline-danger remove-document" data-type="business_entity">
                                 Remove
                             </button>
                         @else
@@ -60,10 +60,10 @@ $documentTypes = [
                     <small class="form-text text-muted">e.g., Proprietor ID, Partner IDs, Director IDs</small>
                     <div class="file-preview text-muted">
                         @if(isset($existingDocuments['ownership']))
-                            <a href="{{ asset('storage/'.$existingDocuments['ownership']) }}" target="_blank" class="btn btn-sm btn-outline-primary">
+                            <a title="View Uploaded Document" href="{{ asset('storage/'.$existingDocuments['ownership']) }}" target="_blank" class="btn btn-sm btn-outline-primary">
                                 View Uploaded Document
                             </a>
-                            <button type="button" class="btn btn-sm btn-outline-danger remove-document" data-type="ownership">
+                            <button title="Remove" type="button" class="btn btn-sm btn-outline-danger remove-document" data-type="ownership">
                                 Remove
                             </button>
                         @else
@@ -84,10 +84,10 @@ $documentTypes = [
                     <input type="file" class="form-control required-field" id="pan_card" name="documents[pan_card]" accept=".pdf,.jpg,.jpeg,.png" {{ isset($existingDocuments['pan']) ? '' : 'required' }}>
                     <div class="file-preview text-muted">
                         @if(isset($existingDocuments['pan']))
-                            <a href="{{ asset('storage/'.$existingDocuments['pan']) }}" target="_blank" class="btn btn-sm btn-outline-primary">
+                            <a title="View Uploaded Document" href="{{ asset('storage/'.$existingDocuments['pan']) }}" target="_blank" class="btn btn-sm btn-outline-primary">
                                 View Uploaded Document
                             </a>
-                            <button type="button" class="btn btn-sm btn-outline-danger remove-document" data-type="pan">
+                            <button title="Remove" type="button" class="btn btn-sm btn-outline-danger remove-document" data-type="pan">
                                 Remove
                             </button>
                         @else
@@ -106,10 +106,10 @@ $documentTypes = [
                     <input type="file" class="form-control" id="gst_certificate" name="documents[gst_certificate]" accept=".pdf,.jpg,.jpeg,.png">
                     <div class="file-preview text-muted">
                         @if(isset($existingDocuments['gst']))
-                            <a href="{{ asset('storage/'.$existingDocuments['gst']) }}" target="_blank" class="btn btn-sm btn-outline-primary">
+                            <a title="View Uploaded Document" href="{{ asset('storage/'.$existingDocuments['gst']) }}" target="_blank" class="btn btn-sm btn-outline-primary">
                                 View Uploaded Document
                             </a>
-                            <button type="button" class="btn btn-sm btn-outline-danger remove-document" data-type="gst">
+                            <button title="Remove" type="button" class="btn btn-sm btn-outline-danger remove-document" data-type="gst">
                                 Remove
                             </button>
                         @else
@@ -131,10 +131,10 @@ $documentTypes = [
                     <small class="form-text text-muted">e.g., Aadhar, Voter ID, Electricity Bill</small>
                     <div class="file-preview text-muted">
                         @if(isset($existingDocuments['address']))
-                            <a href="{{ asset('storage/'.$existingDocuments['address']) }}" target="_blank" class="btn btn-sm btn-outline-primary">
+                            <a title="View Uploaded Document" href="{{ asset('storage/'.$existingDocuments['address']) }}" target="_blank" class="btn btn-sm btn-outline-primary">
                                 View Uploaded Document
                             </a>
-                            <button type="button" class="btn btn-sm btn-outline-danger remove-document" data-type="address">
+                            <button title="Remove" type="button" class="btn btn-sm btn-outline-danger remove-document" data-type="address">
                                 Remove
                             </button>
                         @else
@@ -154,10 +154,10 @@ $documentTypes = [
                     <small class="form-text text-muted">Cancelled cheque or bank statement</small>
                     <div class="file-preview text-muted">
                         @if(isset($existingDocuments['bank']))
-                            <a href="{{ asset('storage/'.$existingDocuments['bank']) }}" target="_blank" class="btn btn-sm btn-outline-primary">
+                            <a title="View Uploaded Document" href="{{ asset('storage/'.$existingDocuments['bank']) }}" target="_blank" class="btn btn-sm btn-outline-primary">
                                 View Uploaded Document
                             </a>
-                            <button type="button" class="btn btn-sm btn-outline-danger remove-document" data-type="bank">
+                            <button title="Remove" type="button" class="btn btn-sm btn-outline-danger remove-document" data-type="bank">
                                 Remove
                             </button>
                         @else
@@ -178,10 +178,10 @@ $documentTypes = [
                     <input type="file" class="form-control" id="seed_license" name="documents[seed_license]" accept=".pdf,.jpg,.jpeg,.png">
                     <div class="file-preview text-muted">
                         @if(isset($existingDocuments['seed_license']))
-                            <a href="{{ asset('storage/'.$existingDocuments['seed_license']) }}" target="_blank" class="btn btn-sm btn-outline-primary">
+                            <a title="View Uploaded Document" href="{{ asset('storage/'.$existingDocuments['seed_license']) }}" target="_blank" class="btn btn-sm btn-outline-primary">
                                 View Uploaded Document
                             </a>
-                            <button type="button" class="btn btn-sm btn-outline-danger remove-document" data-type="seed_license">
+                            <button title="Remove" type="button" class="btn btn-sm btn-outline-danger remove-document" data-type="seed_license">
                                 Remove
                             </button>
                         @else
@@ -201,10 +201,10 @@ $documentTypes = [
                     <small class="form-text text-muted">Passport size photograph</small>
                     <div class="file-preview text-muted">
                         @if(isset($existingDocuments['photo']))
-                            <a href="{{ asset('storage/'.$existingDocuments['photo']) }}" target="_blank" class="btn btn-sm btn-outline-primary">
+                            <a title="View Uploaded Document" href="{{ asset('storage/'.$existingDocuments['photo']) }}" target="_blank" class="btn btn-sm btn-outline-primary">
                                 View Uploaded Document
                             </a>
-                            <button type="button" class="btn btn-sm btn-outline-danger remove-document" data-type="photo">
+                            <button title="Remove" type="button" class="btn btn-sm btn-outline-danger remove-document" data-type="photo">
                                 Remove
                             </button>
                         @else
@@ -225,10 +225,10 @@ $documentTypes = [
                     <input type="file" class="form-control required-field" id="shop_photo" name="documents[shop_photo]" accept=".jpg,.jpeg,.png" {{ isset($existingDocuments['shop_photo']) ? '' : 'required' }}>
                     <div class="file-preview text-muted">
                         @if(isset($existingDocuments['shop_photo']))
-                            <a href="{{ asset('storage/'.$existingDocuments['shop_photo']) }}" target="_blank" class="btn btn-sm btn-outline-primary">
+                            <a title="View Uploaded Document" href="{{ asset('storage/'.$existingDocuments['shop_photo']) }}" target="_blank" class="btn btn-sm btn-outline-primary">
                                 View Uploaded Document
                             </a>
-                            <button type="button" class="btn btn-sm btn-outline-danger remove-document" data-type="shop_photo">
+                            <button title="Remove" type="button" class="btn btn-sm btn-outline-danger remove-document" data-type="shop_photo">
                                 Remove
                             </button>
                         @else
@@ -247,10 +247,10 @@ $documentTypes = [
                     <input type="file" class="form-control" id="other_document" name="documents[other_document]" accept=".pdf,.jpg,.jpeg,.png">
                     <div class="file-preview text-muted">
                         @if(isset($existingDocuments['other']))
-                            <a href="{{ asset('storage/'.$existingDocuments['other']) }}" target="_blank" class="btn btn-sm btn-outline-primary">
+                            <a title="View Uploaded Document" href="{{ asset('storage/'.$existingDocuments['other']) }}" target="_blank" class="btn btn-sm btn-outline-primary">
                                 View Uploaded Document
                             </a>
-                            <button type="button" class="btn btn-sm btn-outline-danger remove-document" data-type="other">
+                            <button title="Remove" type="button" class="btn btn-sm btn-outline-danger remove-document" data-type="other">
                                 Remove
                             </button>
                         @else

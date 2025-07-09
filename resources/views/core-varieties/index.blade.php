@@ -25,10 +25,10 @@
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <h5 class="card-title mb-0">Variety List</h5>
                     <div>
-                        <button type="button" class="btn btn-info btn-sm" data-bs-toggle="offcanvas" href="#FilterCanvas">
+                        <button title="Filters" type="button" class="btn btn-info btn-sm" data-bs-toggle="offcanvas" href="#FilterCanvas">
                             <i class="ri-filter-3-line align-middle me-1"></i> Filters
                         </button>
-                        <a href="{{ route('varieties.export') }}" class="btn btn-success btn-sm">
+                        <a title="Export Excel" href="{{ route('varieties.export') }}" class="btn btn-success btn-sm">
                             <i class="fas fa-file-excel me-1"></i> Export Excel
                         </a>
                     </div>
@@ -105,72 +105,7 @@
 </div>
 @endsection
 
-@push('styles')
-<style>
-    #variety-table.dataTable {
-        font-size: 0.82rem;
-    }
 
-    #variety-table.dataTable thead th {
-        font-size: 0.78rem;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        background-color: #f3f6f9;
-        color: #333;
-    }
-
-    #variety-table.dataTable tbody td {
-        font-size: 0.82rem;
-        vertical-align: middle;
-    }
-
-    #variety-table .badge {
-        font-size: 0.68rem;
-        padding: 0.3em 0.6em;
-    }
-
-    .card {
-        border: none;
-        box-shadow: 0 0.75rem 1.5rem rgba(18, 38, 63, 0.03);
-        border-radius: 0.5rem;
-    }
-
-    .card-header {
-        background-color: #f8f9fa;
-        border-bottom: 1px solid rgba(0, 0, 0, .125);
-        padding: 1rem 1.5rem;
-    }
-
-    #variety-table.dataTable tbody tr:nth-child(even) {
-        background-color: #f8f9fa;
-    }
-
-    #variety-table.dataTable tbody tr {
-        border-left: 3px solid transparent;
-        transition: all 0.2s ease;
-    }
-
-    #variety-table.dataTable tbody tr:hover {
-        background-color: rgba(70, 127, 207, 0.05);
-        border-left-color: #467fcf;
-    }
-
-    .btn-sm {
-        padding: 0.4rem 0.5rem;
-        font-size: 0.75rem;
-        line-height: 1;
-        min-width: 32px;
-    }
-
-    .btn-sm i {
-        font-size: 0.8rem;
-    }
-
-    .form-select-sm {
-        font-size: 0.82rem;
-    }
-</style>
-@endpush
 
 @push('scripts')
 <script>

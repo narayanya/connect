@@ -943,18 +943,18 @@
                 <label for="approveRemarks" class="form-label">Remarks (Optional)</label>
                 <textarea name="remarks" id="approveRemarks" class="form-control" rows="2"></textarea>
             </div>
-            <button type="submit" class="btn btn-success">Approve</button>
+            <button title="Approve" type="submit" class="btn btn-success">Approve</button>
         </form>
 
-        <button type="button" class="btn btn-warning ms-2" data-bs-toggle="modal" data-bs-target="#revertModal">
+        <button title="Revert" type="button" class="btn btn-warning ms-2" data-bs-toggle="modal" data-bs-target="#revertModal">
             Revert
         </button>
 
-        <button type="button" class="btn btn-secondary ms-2" data-bs-toggle="modal" data-bs-target="#holdModal">
+        <button title="Hold" type="button" class="btn btn-secondary ms-2" data-bs-toggle="modal" data-bs-target="#holdModal">
             Hold
         </button>
 
-        <button type="button" class="btn btn-danger ms-2" data-bs-toggle="modal" data-bs-target="#rejectModal">
+        <button title="Reject" type="button" class="btn btn-danger ms-2" data-bs-toggle="modal" data-bs-target="#rejectModal">
             Reject
         </button>
     </div>
@@ -968,7 +968,7 @@
                 @csrf
                 <div class="modal-header">
                     <h5 class="modal-title" id="revertModalLabel">Revert Application</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button title="Close" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="mb-3">
@@ -977,8 +977,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-warning">Confirm Revert</button>
+                    <button title="Cancel" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button title="Confirm Revert" type="submit" class="btn btn-warning">Confirm Revert</button>
                 </div>
             </form>
         </div>
@@ -993,7 +993,7 @@
                 @csrf
                 <div class="modal-header">
                     <h5 class="modal-title" id="holdModalLabel">Put Application On Hold</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button title="Close" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="mb-3">
@@ -1006,8 +1006,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-secondary">Confirm Hold</button>
+                    <button title="Cancel" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button title="Confirm Hold" type="submit" class="btn btn-secondary">Confirm Hold</button>
                 </div>
             </form>
         </div>
@@ -1031,8 +1031,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-danger">Confirm Rejection</button>
+                    <button title="Cancel" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button title="Confirm Rejection" type="submit" class="btn btn-danger">Confirm Rejection</button>
                 </div>
             </form>
         </div>

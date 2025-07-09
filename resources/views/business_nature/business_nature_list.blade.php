@@ -81,7 +81,7 @@
                         </div>
                     </form>
                     @can('add-BusinessNature')
-                        <a href="{{ route('business_nature.create') }}" class="btn btn-primary btn-sm">
+                        <a title="Add New" href="{{ route('business_nature.create') }}" class="btn btn-primary btn-sm">
                             <i class="ri-add-line"></i> Add New
                         </a>
                     @endcan

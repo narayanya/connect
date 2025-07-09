@@ -4,8 +4,7 @@
     <!-- start page title -->
     <div class="row">
         <div class="col-12">
-            <div
-                class="page-title-box d-sm-flex align-items-center justify-content-between bg-galaxy-transparent">
+            <div class="page-title-box d-sm-flex align-items-center justify-content-between bg-galaxy-transparent">
                 <h4 class="mb-sm-0">Core APIs</h4>
 
                 <div class="page-title-right">
@@ -14,7 +13,6 @@
                         <li class="breadcrumb-item active">API List</li>
                     </ol>
                 </div>
-
             </div>
         </div>
     </div>
@@ -33,11 +31,9 @@
                         </div>
                         <div class="col-sm-auto ms-auto">
                             <div class="hstack gap-2">
-                                <button class="btn btn-soft-success btn-sm" id="import-actions"><i class=" ri-download-cloud-2-line"></i> Import</button>
-                                <button type="button" class="btn btn-success add-btn btn-sm" id="syncAPI"><i
-                                        class="ri-restart-line align-bottom me-1"></i> Sync APIs
-                                </button>
-
+                                <button title="Import" class="btn btn-soft-success btn-sm" id="import-actions"><i class=" ri-download-cloud-2-line"></i> Import</button>
+                                <button title="Sync APIs" type="button" class="btn btn-success add-btn btn-sm" id="syncAPI"><i
+                                        class="ri-restart-line align-bottom me-1"></i> Sync APIs</button>
                             </div>
                         </div>
                     </div>
@@ -79,7 +75,6 @@
                                 @endforeach
                             </tbody>
                         </table>
-
                     </div>
                     <!--end table-->
 
@@ -90,7 +85,7 @@
                                 colors="primary:#121331,secondary:#08a88a"
                                 style="width:75px;height:75px"></lord-icon>
                             <h5 class="mt-2">Sorry! No Result Found</h5>
-
+                            
                         </div>
                     </div>
 
@@ -120,72 +115,7 @@
 </div>
 
 @endsection
-@push('styles')
-<style>
-    #data-table.dataTable {
-        font-size: 0.82rem;
-    }
 
-    #data-table.dataTable thead th {
-        font-size: 0.78rem;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        background-color: #f3f6f9;
-        color: #333;
-    }
-
-    #data-table.dataTable tbody td {
-        font-size: 0.82rem;
-        vertical-align: middle;
-    }
-
-    #data-table .badge {
-        font-size: 0.68rem;
-        padding: 0.3em 0.6em;
-    }
-
-    .card {
-        border: none;
-        box-shadow: 0 0.75rem 1.5rem rgba(18, 38, 63, 0.03);
-        border-radius: 0.5rem;
-    }
-
-    .card-header {
-        background-color: #f8f9fa;
-        border-bottom: 1px solid rgba(0, 0, 0, .125);
-        padding: 1rem 1.5rem;
-    }
-
-    #data-table.dataTable tbody tr:nth-child(even) {
-        background-color: #f8f9fa;
-    }
-
-    #data-table.dataTable tbody tr {
-        border-left: 3px solid transparent;
-        transition: all 0.2s ease;
-    }
-
-    #data-table.dataTable tbody tr:hover {
-        background-color: rgba(70, 127, 207, 0.05);
-        border-left-color: #467fcf;
-    }
-
-    .btn-sm {
-        padding: 0.4rem 0.5rem;
-        font-size: 0.75rem;
-        line-height: 1;
-        min-width: 32px;
-    }
-
-    .btn-sm i {
-        font-size: 0.8rem;
-    }
-
-    .form-select-sm {
-        font-size: 0.82rem;
-    }
-</style>
-@endpush
 @push('scripts')
 <script src="{{ asset('assets/js/data_table_init.js') }}"></script>
 <script>

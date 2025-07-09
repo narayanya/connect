@@ -27,7 +27,7 @@
                     </div>
                     <div class="col-md-2">
                         @if($index > 0)
-                        <button type="button" class="btn btn-sm btn-danger remove-distributorship" style="margin-top: 30px;">
+                        <button title="Remove" type="button" class="btn btn-sm btn-danger remove-distributorship" style="margin-top: 30px;">
                             <i class="ri-delete-bin-line"></i> 
                         </button>
                         @endif
@@ -58,7 +58,7 @@
         @endif
     </div>
     
-    <button type="button" class="btn btn-sm btn-primary add-distributorship">
+    <button title="Add Another Company" type="button" class="btn btn-sm btn-primary add-distributorship">
         <i class="fas fa-plus"></i> Add Another Company
     </button>
 </div>

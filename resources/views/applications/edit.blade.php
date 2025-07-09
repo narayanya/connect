@@ -72,9 +72,9 @@
                         </div>--}}
 
                         <div class="form-navigation mt-4">
-                            <button type="button" class="btn btn-secondary previous" style="display:none;">Previous</button>
-                            <button type="button" class="btn btn-primary next">Next</button>
-                            <button type="submit" class="btn btn-success submit" style="display:none;" name="submit" id="submit-application">Submit Application</button>
+                            <button title="Previous" type="button" class="btn btn-secondary previous" style="display:none;">Previous</button>
+                            <button title="Next" type="button" class="btn btn-primary next">Next</button>
+                            <button title="Submit" type="submit" class="btn btn-success submit" style="display:none;" name="submit" id="submit-application">Submit Application</button>
                         </div>
                     </form>
                 </div>

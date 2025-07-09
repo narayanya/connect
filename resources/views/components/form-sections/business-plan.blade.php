@@ -56,7 +56,7 @@
                 </td>
                 <td>
                     @if($index > 0)
-                    <button type="button" class="btn btn-sm btn-danger remove-business-plan">
+                    <button title="Remove" type="button" class="btn btn-sm btn-danger remove-business-plan">
                         <i class="ri-delete-bin-line"></i> 
                     </button>
                     @endif
@@ -66,7 +66,7 @@
         </tbody>
     </table>
 
-    <button type="button" class="btn btn-sm btn-primary add-business-plan">
+    <button title="Add Another Crop" type="button" class="btn btn-sm btn-primary add-business-plan">
         <i class="fas fa-plus"></i> Add Another Crop
     </button>
 </div>

@@ -25,10 +25,10 @@
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <h5 class="card-title mb-0">Region List</h5>
                     <div>
-                        <button type="button" class="btn btn-info btn-sm" data-bs-toggle="offcanvas" href="#FilterCanvas">
+                        <button title="Filters" type="button" class="btn btn-info btn-sm" data-bs-toggle="offcanvas" href="#FilterCanvas">
                             <i class="ri-filter-3-line align-bottom me-1"></i> Filters
                         </button>
-                        <a href="{{ route('regions.export') }}" class="btn btn-success btn-sm">
+                        <a title="Export Excel" href="{{ route('regions.export') }}" class="btn btn-success btn-sm">
                             <i class="fas fa-file-excel me-1"></i> Export Excel
                         </a>
                     </div>
@@ -93,10 +93,10 @@
             <div class="offcanvas-footer border-top p-3 text-center">
                 <div class="row">
                     <div class="col-6">
-                        <button type="button" class="btn btn-primary btn-sm w-100" id="apply-btn">Apply Filters</button>
+                        <button title="Apply Filters" type="button" class="btn btn-primary btn-sm w-100" id="apply-btn">Apply Filters</button>
                     </div>
                     <div class="col-6">
-                        <button type="button" class="btn btn-light btn-sm w-100" id="reset-btn">Reset</button>
+                        <button title="Reset" type="button" class="btn btn-light btn-sm w-100" id="reset-btn">Reset</button>
                     </div>
                 </div>
             </div>
@@ -105,57 +105,7 @@
 </div>
 @endsection
 
-@push('styles')
-<style>
-    #region-table.dataTable {
-        font-size: 0.82rem;
-    }
 
-    #region-table.dataTable thead th {
-        font-size: 0.78rem;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        background-color: #f3f6f9;
-        color: #333;
-    }
-
-    #region-table.dataTable tbody td {
-        font-size: 0.82rem;
-        vertical-align: middle;
-    }
-
-    #region-table .badge {
-        font-size: 0.68rem;
-        padding: 0.3em 0.6em;
-    }
-
-    .card {
-        border: none;
-        box-shadow: 0 0.75rem 1.5rem rgba(18, 38, 63, 0.03);
-        border-radius: 0.5rem;
-    }
-
-    .card-header {
-        background-color: #f8f9fa;
-        border-bottom: 1px solid rgba(0, 0, 0, .125);
-        padding: 1rem 1.5rem;
-    }
-
-    #region-table.dataTable tbody tr:nth-child(even) {
-        background-color: #f8f9fa;
-    }
-
-    #region-table.dataTable tbody tr {
-        border-left: 3px solid transparent;
-        transition: all 0.2s ease;
-    }
-
-    #region-table.dataTable tbody tr:hover {
-        background-color: rgba(70, 127, 207, 0.05);
-        border-left-color: #467fcf;
-    }
-</style>
-@endpush
 
 @push('scripts')
 <script>

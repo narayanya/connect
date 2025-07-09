@@ -99,7 +99,7 @@
         <div class="card mb-4">
             <div class="card-header bg-light d-flex justify-content-between align-items-center">
                 <h6 class="mb-0">Partners Details</h6>
-                <button type="button" class="btn btn-sm btn-primary" onclick="addPartner()">+ Add Partner</button>
+                <button title="Add Partner" type="button" class="btn btn-sm btn-primary" onclick="addPartner()">+ Add Partner</button>
             </div>
             <div class="card-body">
                 <div id="partners_container">
@@ -157,7 +157,7 @@
         <div class="card mb-4">
             <div class="card-header bg-light d-flex justify-content-between align-items-center">
                 <h6 class="mb-0">Designated Partners Details</h6>
-                <button type="button" class="btn btn-sm btn-primary" onclick="addLLPPartner()">+ Add Partner</button>
+                <button title="Add Partner" type="button" class="btn btn-sm btn-primary" onclick="addLLPPartner()">+ Add Partner</button>
             </div>
             <div class="card-body">
                 <div id="llp_partners_container">
@@ -225,7 +225,7 @@
         <div class="card mb-4">
             <div class="card-header bg-light d-flex justify-content-between align-items-center">
                 <h6 class="mb-0">Directors Details</h6>
-                <button type="button" class="btn btn-sm btn-primary" onclick="addDirector()">+ Add Director</button>
+                <button title="Add Director" type="button" class="btn btn-sm btn-primary" onclick="addDirector()">+ Add Director</button>
             </div>
             <div class="card-body">
                 <div id="directors_container">
@@ -264,7 +264,7 @@
                             </div>
                         </div>
                         
-                        <button type="button" class="btn btn-sm btn-danger btnWI danger" onclick="removeDirector(this)">Remove</button>
+                        <button title="remove" type="button" class="btn btn-sm btn-danger btnWI danger" onclick="removeDirector(this)">Remove</button>
                     </div>
                     @endforeach
                 </div>
@@ -293,7 +293,7 @@
         <div class="card mb-4">
             <div class="card-header bg-light d-flex justify-content-between align-items-center">
                 <h6 class="mb-0">Committee Members Details</h6>
-                <button type="button" class="btn btn-sm btn-primary" onclick="addCommitteeMember()">+ Add Member</button>
+                <button title="Add Member" type="button" class="btn btn-sm btn-primary" onclick="addCommitteeMember()">+ Add Member</button>
             </div>
             <div class="card-body">
                 <div id="committee_container">
@@ -332,7 +332,7 @@
                             </div>
                         </div>
                         
-                        <button type="button" class="btn btn-sm btn-danger" onclick="removeCommitteeMember(this)">Remove</button>
+                        <button title="Remove" type="button" class="btn btn-sm btn-danger" onclick="removeCommitteeMember(this)">Remove</button>
                     </div>
                     @endforeach
                 </div>
@@ -361,7 +361,7 @@
         <div class="card mb-4">
             <div class="card-header bg-light d-flex justify-content-between align-items-center">
                 <h6 class="mb-0">Trustees Details</h6>
-                <button type="button" class="btn btn-sm btn-primary" onclick="addTrustee()">+ Add Trustee</button>
+                <button title="Add Trustee" type="button" class="btn btn-sm btn-primary" onclick="addTrustee()">+ Add Trustee</button>
             </div>
             <div class="card-body">
                 <div id="trustees_container">
@@ -400,7 +400,7 @@
                             </div>
                         </div>
                         
-                        <button type="button" class="btn btn-sm btn-danger" onclick="removeTrustee(this)">Remove</button>
+                        <button title="Remove" type="button" class="btn btn-sm btn-danger" onclick="removeTrustee(this)">Remove</button>
                     </div>
                     @endforeach
                 </div>
@@ -742,7 +742,7 @@
                     </div>
                     
                     
-                    <button type="button" class="btn btn-sm btn-danger" onclick="removeAuthorizedPerson(this)">Remove</button>
+                    <button title="Remove" type="button" class="btn btn-sm btn-danger" onclick="removeAuthorizedPerson(this)">Remove</button>
                 </div>
                 @endforeach
             </div>
@@ -909,7 +909,7 @@
                         </div>
                     </div>
                 </div>
-                <button type="button" class="btn btn-sm btn-danger" onclick="removePartner(this)">Remove</button>
+                <button title="Remove" type="button" class="btn btn-sm btn-danger" onclick="removePartner(this)">Remove</button>
             `;
             container.appendChild(newEntry);
         }
@@ -955,7 +955,7 @@
                     </div>
                 </div>
                 
-                <button type="button" class="btn btn-sm btn-danger" onclick="removeLLPPartner(this)">Remove</button>
+                <button title="Remove" type="button" class="btn btn-sm btn-danger" onclick="removeLLPPartner(this)">Remove</button>
             `;
             container.appendChild(newEntry);
         }
@@ -1001,7 +1001,7 @@
                     </div>
                 </div>
                 
-                <button type="button" class="btn btn-sm btn-danger" onclick="removeDirector(this)">Remove</button>
+                <button title="Remove" type="button" class="btn btn-sm btn-danger" onclick="removeDirector(this)">Remove</button>
             `;
             container.appendChild(newEntry);
         }
@@ -1047,7 +1047,7 @@
                     </div>
                 </div>
                 
-                <button type="button" class="btn btn-sm btn-danger" onclick="removeCommitteeMember(this)">Remove</button>
+                <button title="Remove" type="button" class="btn btn-sm btn-danger" onclick="removeCommitteeMember(this)">Remove</button>
             `;
             container.appendChild(newEntry);
         }
@@ -1093,7 +1093,7 @@
                     </div>
                 </div>
                 
-                <button type="button" class="btn btn-sm btn-danger" onclick="removeTrustee(this)">Remove</button>
+                <button title="Remove" type="button" class="btn btn-sm btn-danger" onclick="removeTrustee(this)">Remove</button>
             `;
             container.appendChild(newEntry);
         }
@@ -1144,7 +1144,7 @@
                         </div>
                     </div>
                 </div>
-                <button type="button" class="btn btn-sm btn-danger" onclick="removeAuthorizedPerson(this)">Remove</button>
+                <button title="Remove" type="button" class="btn btn-sm btn-danger" onclick="removeAuthorizedPerson(this)">Remove</button>
             `;
             container.appendChild(newEntry);
         }

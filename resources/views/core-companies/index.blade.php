@@ -24,7 +24,7 @@
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <h5 class="card-title mb-0">Company List</h5>
                     <div>
-                        <a href="{{ route('companies.export') }}" class="btn btn-success btn-sm">
+                        <a title="Export Excel" href="{{ route('companies.export') }}" class="btn btn-success btn-sm">
                             <i class="fas fa-file-excel me-1"></i> Export Excel
                         </a>
                     </div>
@@ -91,53 +91,3 @@
 </div>
 @endsection
 
-@push('styles')
-<style>
-    #companies-table {
-        font-size: 0.82rem;
-    }
-
-    #companies-table thead th {
-        font-size: 0.78rem;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        background-color: #f3f6f9;
-        color: #333;
-    }
-
-    #companies-table tbody td {
-        font-size: 0.82rem;
-        vertical-align: middle;
-    }
-
-    #companies-table .badge {
-        font-size: 0.68rem;
-        padding: 0.3em 0.6em;
-    }
-
-    .card {
-        border: none;
-        box-shadow: 0 0.75rem 1.5rem rgba(18, 38, 63, 0.03);
-        border-radius: 0.5rem;
-    }
-
-    .card-header {
-        background-color: #f8f9fa;
-        border-bottom: 1px solid rgba(0, 0, 0, .125);
-        padding: 1rem 1.5rem;
-    }
-
-    #companies-table tbody tr:nth-child(even) {
-        background-color: #f8f9fa;
-    }
-
-    #companies-table tbody tr {
-        border-left: 3px solid transparent;
-        transition: all 0.2s ease;
-    }
-
-    #companies-table tbody tr:hover {
-        background-color: rgba(70, 127, 207, 0.05);
-    }
-</style>
-@endpush

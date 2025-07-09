@@ -10,7 +10,7 @@
 @endpush
 
 @push('page-back-button')
-    <a href="{{ route('business_nature.index') }}" class="btn btn-outline-secondary me-2">
+    <a title="Back" href="{{ route('business_nature.index') }}" class="btn btn-outline-secondary me-2">
         <i class="ri-arrow-left-line"></i> Back
     </a>
 @endpush
@@ -59,7 +59,7 @@
                 <h4 class="card-title mb-0">{{ isset($data->id) ? 'Update' : 'Add New' }} Business Nature</h4>
                 @can('delete-BusinessNature')
                     @if(isset($data->id))
-                        <a href="javascript:void(0)" data-link="{{ route('business_nature.destroy', $data->id) }}" data-id="{{ $data->id }}" class="btn btn-sm btn-outline-danger js-ak-delete-link">
+                        <a title="Remove" href="javascript:void(0)" data-link="{{ route('business_nature.destroy', $data->id) }}" data-id="{{ $data->id }}" class="btn btn-sm btn-outline-danger js-ak-delete-link">
                             <i class="ri-delete-bin-line"></i>
                         </a>
                     @endif
@@ -104,10 +104,10 @@
                     </div>
                     
                     <div class="d-flex justify-content-end gap-2 mt-3">
-                        <button type="submit" class="btn btn-success btn-sm">
+                        <button title="Save" type="submit" class="btn btn-success btn-sm">
                             <i class="ri-save-line"></i> Save
                         </button>
-                        <a href="{{ $cancel_route ?? route('business_nature.index') }}" class="btn btn-light btn-sm">Cancel</a>
+                        <a title="Cancel" href="{{ $cancel_route ?? route('business_nature.index') }}" class="btn btn-light btn-sm">Cancel</a>
                     </div>
                 </form>
             </div>
