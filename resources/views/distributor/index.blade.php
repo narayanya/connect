@@ -9,7 +9,7 @@
                 <h4 class="mb-sm-0">Distributors</h4>
                 <div class="page-title-right">
                     <ol class="breadcrumb m-0">
-                        <li class="breadcrumb-item"><a href="javascript:void(0);">Home</a></li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0);">Master</a></li>
                         <li class="breadcrumb-item active">Distributor List</li>
                     </ol>
                 </div>
@@ -22,7 +22,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center">
-                    <h5 class="card-title mb-0">Distributor Records</h5>
+                    <h5 class="card-title mb-0">Distributor List</h5>
                     <div class="hstack gap-2">
                         <button type="button" class="btn btn-info btn-sm" data-bs-toggle="offcanvas" href="#FilterCanvas">
                             <i class="ri-filter-3-line align-bottom me-1"></i> Filters

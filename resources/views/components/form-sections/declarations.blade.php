@@ -70,27 +70,27 @@
     // Define questions for rendering
     $questions = [
         'is_other_distributor' => [
-            'label' => 'a. Whether the Distributor is an Agent/Distributor of any other Company?',
+            'label' => 'A. Whether the Distributor is an Agent/Distributor of any other Company?',
             'details_field' => 'other_distributor_details',
         ],
         'has_sister_concern' => [
-            'label' => 'b. Whether the Distributor has any sister concern or affiliated entity other than the one applying for this distributorship?',
+            'label' => 'B. Whether the Distributor has any sister concern or affiliated entity other than the one applying for this distributorship?',
             'details_field' => 'sister_concern_details',
         ],
         'has_question_c' => [
-            'label' => 'c. Whether the Distributor is acting as an Agent/Distributor for any other entities in the distribution of similar crops?',
+            'label' => 'C. Whether the Distributor is acting as an Agent/Distributor for any other entities in the distribution of similar crops?',
             'details_field' => 'question_c_details',
         ],
         'has_question_d' => [
-            'label' => 'd. Whether the Distributor is a partner, relative, or otherwise associated with any entity engaged in the business of agro inputs?',
+            'label' => 'D. Whether the Distributor is a partner, relative, or otherwise associated with any entity engaged in the business of agro inputs?',
             'details_field' => 'question_d_details',
         ],
         'has_question_e' => [
-            'label' => 'e. Whether the Distributor has previously acted as an Agent/Distributor of VNR Seeds and is again applying for a Distributorship?',
+            'label' => 'E. Whether the Distributor has previously acted as an Agent/Distributor of VNR Seeds and is again applying for a Distributorship?',
             'details_field' => 'question_e_details',
         ],
         'has_disputed_dues' => [
-            'label' => 'f. Whether any disputed dues are payable by the Distributor to the other Company/Bank/Financial Institution?',
+            'label' => 'F. Whether any disputed dues are payable by the Distributor to the other Company/Bank/Financial Institution?',
             'details_fields' => [
                 'disputed_amount' => 'Amount',
                 'dispute_nature' => 'Nature of Dispute',
@@ -100,19 +100,19 @@
             ],
         ],
         'has_question_g' => [
-            'label' => 'g. Whether the Distributor has ceased to be Agent/Distributor of any other company in the last twelve months?',
+            'label' => 'G. Whether the Distributor has ceased to be Agent/Distributor of any other company in the last twelve months?',
             'details_field' => 'question_g_details',
         ],
         'has_question_h' => [
-            'label' => 'h. Whether the Distributor’s relative is connected in any way with VNR Seeds and any other Seed Company?',
+            'label' => 'H. Whether the Distributor’s relative is connected in any way with VNR Seeds and any other Seed Company?',
             'details_field' => 'question_h_details',
         ],
         'has_question_i' => [
-            'label' => 'i. Whether the Distributor is involved in any other capacity with the Company apart from this application?',
+            'label' => 'I. Whether the Distributor is involved in any other capacity with the Company apart from this application?',
             'details_field' => 'question_i_details',
         ],
         'has_question_j' => [
-            'label' => 'j. Whether the Distributor has been referred by any Distributors or other parties associated with the Company?',
+            'label' => 'J. Whether the Distributor has been referred by any Distributors or other parties associated with the Company?',
             'details_fields' => [
                 'referrer_1' => 'Referrer I',
                 'referrer_2' => 'Referrer II',
@@ -121,18 +121,19 @@
             ],
         ],
         'has_question_k' => [
-            'label' => 'k. Whether the Distributor is currently marketing or selling products under its own brand name?',
+            'label' => 'K. Whether the Distributor is currently marketing or selling products under its own brand name?',
             'details_field' => 'question_k_details',
         ],
         'has_question_l' => [
-            'label' => 'l. Whether the Distributor has been employed in the agro-input industry at any point during the past 5 years?',
+            'label' => 'L. Whether the Distributor has been employed in the agro-input industry at any point during the past 5 years?',
             'details_field' => 'question_l_details',
         ],
     ];
 @endphp
 
 <div id="declarations" class="form-section step-content" data-step="8" style="display: none;">
-    <h5 class="mb-4">Declarations</h5>
+    <h5 class="mb-3">Declarations</h5>
+    <hr>
     <p class="text-muted mb-4">Answer the following questions carefully (Select Yes/No, if Yes then specify details)</p>
 
     @foreach($questions as $questionKey => $config)

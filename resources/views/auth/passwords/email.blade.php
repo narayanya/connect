@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Connect - Forgot Password</title>
-    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}">
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/app.min.css') }}" rel="stylesheet">
@@ -12,8 +12,8 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
         :root {
-            --connect-primary: #4f46e5;
-            --connect-secondary: #7c3aed;
+               --connect-primary: #358176;
+    --connect-secondary: #217468;
             --connect-accent: #06b6d4;
             --connect-dark: #1e293b;
             --connect-light: #f8fafc;
@@ -365,7 +365,9 @@
         
         <div class="left-panel">
             <div class="brand-section">
-                <div class="connect-logo">Connect</div>
+                <div class="connect-logo">
+                    <img src="{{ asset('assets/images/connect-logo.png') }}" alt="" >
+                </div>
                 <p class="brand-tagline">Secure Password Recovery</p>
                 <ul class="security-features">
                     <li>Encrypted Reset Links</li>

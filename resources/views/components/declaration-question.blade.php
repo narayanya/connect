@@ -8,8 +8,8 @@
 
 <div class="card mb-4">
     <div class="card-body">
-        <div class="form-group mb-3">
-            <label class="form-label">{!! $label !!}</label>
+        <div class="form-group">
+            <label class="form-label w-100">{!! $label !!}</label>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="{{ $questionKey }}" id="{{ $questionKey }}_yes" value="1" required {{ old($questionKey, $declarationsData[$questionKey]['has_issue'] ?? '0') == '1' ? 'checked' : '' }}>
                 <label class="form-check-label" for="{{ $questionKey }}_yes">Yes</label>

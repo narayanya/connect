@@ -1,6 +1,6 @@
 <div id="existing-distributorships" class="form-section">
-    <h5 class="mb-4">Existing Distributorships (Agro Inputs) <small class="text-muted">(Leave blank if none)</small></h5>
-    
+    <h5 class="mb-3">Existing Distributorships (Agro Inputs) <small class="text-muted">(Leave blank if none)</small></h5>
+    <hr>
     <div id="distributorship-container">
         @php
         $existingDistributorships = $application->existingDistributorships ?? [];
@@ -10,9 +10,9 @@
         
         @if($hasExisting)
             @foreach($existingDistributorships as $index => $distributorship)
-            <div class="distributorship-row mb-3">
+            <div class="distributorship-row">
                 <div class="row">
-                    <div class="col-md-10">
+                    <div class="col-md-6">
                         <div class="form-group mb-3">
                             <label class="form-label">Company Name</label>
                             <input type="text" class="form-control {{ isset($errors) && $errors->has('existing_distributorships.'.$index.'.company_name') ? 'is-invalid' : '' }}" 
@@ -28,7 +28,7 @@
                     <div class="col-md-2">
                         @if($index > 0)
                         <button type="button" class="btn btn-sm btn-danger remove-distributorship" style="margin-top: 30px;">
-                            <i class="fas fa-trash"></i>
+                            <i class="ri-delete-bin-line"></i> 
                         </button>
                         @endif
                     </div>
@@ -38,7 +38,7 @@
         @else
             <div class="distributorship-row mb-3">
                 <div class="row">
-                    <div class="col-md-10">
+                    <div class="col-md-6">
                         <div class="form-group mb-3">
                             <label class="form-label">Company Name</label>
                             <input type="text" class="form-control {{ isset($errors) && $errors->has('existing_distributorships.0.company_name') ? 'is-invalid' : '' }}" 

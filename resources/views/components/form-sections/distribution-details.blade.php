@@ -1,12 +1,12 @@
 <!-- Step 3: Distribution Details -->
 <div id="distribution-details" class="form-section">
-    <h5 class="mb-4">Distribution Details</h5>
-    
+    <h5 class="mb-3">Distribution Details</h5>
+    <hr>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-6">
             <div class="form-group mb-3">
-                <label for="area_covered" class="form-label">Area to be covered *</label>
-                <select id="area_covered" name="area_covered[]" style="width: 100%;" multiple required>
+                <label for="area_covered" class="form-label">Area to be covered <span class="text-danger">*</span></label>
+                <select class="form-select form-control" id="area_covered" name="area_covered[]" style="width: 100%;" multiple required>
                     @php
                         // Get areas from old input or database
                         $selectedAreas = old('area_covered', $application->distributionDetail->area_covered ?? []);
@@ -48,13 +48,11 @@
                 @enderror
             </div>
         </div>
-    </div>
     
-    <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-6">
             <div class="form-group mb-3">
-                <label for="appointment_type" class="form-label">Appointment Type *</label>
-                <select class="form-select" id="appointment_type" name="appointment_type" required>
+                <label for="appointment_type" class="form-label">Appointment Type <span class="text-danger">*</span></label>
+                <select class="form-select form-control" id="appointment_type" name="appointment_type" required>
                     <option value="new_area" {{ old('appointment_type', $application->distributionDetail->appointment_type ?? '') == 'new_area' ? 'selected' : '' }}>New Area</option>
                     <option value="replacement" {{ old('appointment_type', $application->distributionDetail->appointment_type ?? '') == 'replacement' ? 'selected' : '' }}>Replacement of an existing Distributor</option>
                     <option value="addition" {{ old('appointment_type', $application->distributionDetail->appointment_type ?? '') == 'addition' ? 'selected' : '' }}>Addition in current distributor area</option>
@@ -68,34 +66,30 @@
     
     <div id="replacement-details" class="replacement-section" style="display: none;">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
                 <div class="form-group mb-3">
-                    <label for="replacement_reason" class="form-label">Reason for Replacement *</label>
-                    <textarea class="form-control" id="replacement_reason" name="replacement_reason" rows="2">{{ old('replacement_reason', $application->distributionDetail->replacement_reason ?? '') }}</textarea>
+                    <label for="replacement_reason" class="form-label">Reason for Replacement <span class="text-danger">*</span></label>
+                    <textarea class="form-control" id="replacement_reason" name="replacement_reason" placeholder="Reason for Replacement" rows="2">{{ old('replacement_reason', $application->distributionDetail->replacement_reason ?? '') }}</textarea>
                     @error('replacement_reason')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
             </div>
-        </div>
         
-        <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
                 <div class="form-group mb-3">
-                    <label for="outstanding_recovery" class="form-label">Commitment to Recover Outstanding *</label>
-                    <textarea class="form-control" id="outstanding_recovery" name="outstanding_recovery" rows="2">{{ old('outstanding_recovery', $application->distributionDetail->outstanding_recovery ?? '') }}</textarea>
+                    <label for="outstanding_recovery" class="form-label">Commitment to Recover Outstanding <span class="text-danger">*</span></label>
+                    <textarea class="form-control" id="outstanding_recovery" name="outstanding_recovery" placeholder="Commitment to Recover Outstanding" rows="2">{{ old('outstanding_recovery', $application->distributionDetail->outstanding_recovery ?? '') }}</textarea>
                     @error('outstanding_recovery')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
             </div>
-        </div>
-        
-        <div class="row">
+    
             <div class="col-md-6">
                 <div class="form-group mb-3">
-                    <label for="previous_firm_name" class="form-label">Name of Previous Firm *</label>
-                    <input type="text" class="form-control" id="previous_firm_name" name="previous_firm_name" value="{{ old('previous_firm_name', $application->distributionDetail->previous_firm_name ?? '') }}">
+                    <label for="previous_firm_name" class="form-label">Name of Previous Firm <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="previous_firm_name" placeholder="Name of Previous Firm" name="previous_firm_name" placeholder="Name of Previous Firm" value="{{ old('previous_firm_name', $application->distributionDetail->previous_firm_name ?? '') }}">
                     @error('previous_firm_name')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
@@ -103,8 +97,8 @@
             </div>
             <div class="col-md-6">
                 <div class="form-group mb-3">
-                    <label for="previous_firm_code" class="form-label">Code of Previous Firm *</label>
-                    <input type="text" class="form-control" id="previous_firm_code" name="previous_firm_code" value="{{ old('previous_firm_code', $application->distributionDetail->previous_firm_code ?? '') }}">
+                    <label for="previous_firm_code" class="form-label">Code of Previous Firm <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="previous_firm_code" placeholder="Code of Previous Firm" name="previous_firm_code" placeholder="Code of Previous Firm" value="{{ old('previous_firm_code', $application->distributionDetail->previous_firm_code ?? '') }}">
                     @error('previous_firm_code')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
@@ -117,7 +111,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group mb-3">
-                    <label for="earlier_distributor" class="form-label">If New area, who was the earlier distributor covering that area *</label>
+                    <label for="earlier_distributor" class="form-label">If New area, who was the earlier distributor covering that area <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="earlier_distributor" name="earlier_distributor" value="{{ old('earlier_distributor', $application->distributionDetail->earlier_distributor ?? 'None') }}">
                     @error('earlier_distributor')
                         <div class="text-danger">{{ $message }}</div>

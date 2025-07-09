@@ -11,7 +11,7 @@ table tbody td{
     font-size: 12px;
 }
 .form-label, .form-control-sm, .form-select-sm{
-    font-size: 12px !important;
+    font-size: 11px !important;
 }
 .card-header{
     padding: 9px 1rem !important;
@@ -24,7 +24,7 @@ table tbody td{
 }
 .form-select{
     padding: 7px;
-    line-height: 1.0;
+    /*line-height: 1.0;*/
 }
 .search-form{
         line-height: 1.0;

@@ -1,11 +1,12 @@
 <div id="basic-details" class="form-section">
-    <h5 class="mb-4">Basic Details</h5>
+    <h5 class="mb-3">Basic Details</h5>
+    <hr>
     <div class="row">
         <!-- Territory Dropdown -->
         <div class="col-md-2">
             <div class="form-group mb-3">
                 <label for="territory" class="form-label">Territory <span class="text-danger">*</span></label>
-                <select class="form-control" id="territory" name="territory" required onchange="updateDependentFields()">
+                <select class="form-select form-control" id="territory" name="territory" required onchange="updateDependentFields()">
                     <option value="">Select Territory</option>
                     @foreach($territory_list as $id => $name)
                         <option value="{{ $id }}"
@@ -52,7 +53,7 @@
         <div class="col-md-2">
             <div class="form-group mb-3">
                 <label for="crop_vertical" class="form-label">Crop Vertical <span class="text-danger">*</span></label>
-                <select class="form-control" id="crop_vertical" name="crop_vertical" required>
+                <select class="form-select form-control" id="crop_vertical" name="crop_vertical" required>
                     @foreach($crop_type as $id => $name)
                         <option value="{{ $id }}"
                             {{ (isset($application) && $application->crop_vertical == $id) || (isset($preselected['crop_vertical']) && $preselected['crop_vertical'] == $id) ? 'selected' : '' }}>
@@ -68,7 +69,7 @@
         <div class="col-md-3">
             <div class="form-group mb-3">
                 <label for="dis_state" class="form-label">State <span class="text-danger">*</span></label>
-                <select class="form-control" id="dis_state" name="dis_state" required>
+                <select class="form-select form-control" id="dis_state" name="dis_state" required>
                     <option value="">Select State</option>
                     @foreach($states as $state)
                         <option value="{{ $state->id }}"
@@ -82,7 +83,7 @@
         <div class="col-md-3">
             <div class="form-group mb-3">
                 <label for="district" class="form-label">District <span class="text-danger">*</span></label>
-                <select class="form-control" id="district" name="district" required>
+                <select class="form-select form-control" id="district" name="district" required>
                     <option value="">Select District</option>
                     @if(isset($application) && $application->district)
                         @php

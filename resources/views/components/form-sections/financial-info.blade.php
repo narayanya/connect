@@ -1,6 +1,6 @@
   <div id="financial-info" class="form-section">
-      <h5 class="mb-4">Financial & Operational Information</h5>
-
+      <h5 class="mb-3">Financial & Operational Information</h5>
+        <hr>
       @php
       $financialInfo = $application->financialInfo ?? null;
       // Decode the JSON if it exists, otherwise use empty array
@@ -20,18 +20,18 @@
       @endphp
 
       <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-3">
               <div class="form-group mb-3">
-                  <label for="net_worth" class="form-label">Net Worth (Previous FY) *</label>
-                  <input type="number" step="0.01" class="form-control" id="net_worth" name="net_worth" value="{{ old('net_worth', $financialInfo->net_worth ?? '') }}" required>
+                  <label for="net_worth" class="form-label">Net Worth (Previous FY) <span class="text-danger">*</span></label>
+                  <input type="number" step="0.01" class="form-control" id="net_worth" placeholder="Net Worth (Previous FY)" name="net_worth" value="{{ old('net_worth', $financialInfo->net_worth ?? '') }}" required>
                   @error('net_worth')
                   <div class="text-danger">{{ $message }}</div>
                   @enderror
               </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-3">
               <div class="form-group mb-3">
-                  <label for="shop_ownership" class="form-label">Shop Ownership *</label>
+                  <label for="shop_ownership" class="form-label">Shop Ownership <span class="text-danger">*</span></label>
                   <select class="form-control" id="shop_ownership" name="shop_ownership" required>
                       <option value="">Select Ownership</option>
                       <option value="owned" {{ old('shop_ownership', $financialInfo->shop_ownership ?? '') == 'owned' ? 'selected' : '' }}>Owned</option>
@@ -43,22 +43,20 @@
                   @enderror
               </div>
           </div>
-      </div>
-
-      <div class="row">
-          <div class="col-md-6">
+      
+          <div class="col-md-3">
               <div class="form-group mb-3">
-                  <label for="godown_area" class="form-label">Godown Area & Ownership *</label>
-                  <input type="text" class="form-control" id="godown_area" name="godown_area" value="{{ old('godown_area', $financialInfo->godown_area ?? '') }}" required>
+                  <label for="godown_area" class="form-label">Godown Area & Ownership <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="godown_area" placeholder="Godown Area & Ownership" name="godown_area" value="{{ old('godown_area', $financialInfo->godown_area ?? '') }}" required>
                   @error('godown_area')
                   <div class="text-danger">{{ $message }}</div>
                   @enderror
               </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-3">
               <div class="form-group mb-3">
-                  <label for="years_in_business" class="form-label">Years in Business *</label>
-                  <input type="number" class="form-control" id="years_in_business" name="years_in_business" min="0" value="{{ old('years_in_business', $financialInfo->years_in_business ?? '') }}" required>
+                  <label for="years_in_business" class="form-label">Years in Business <span class="text-danger">*</span></label>
+                  <input type="number" class="form-control" id="years_in_business" name="years_in_business" min="0" placeholder="Years in Business" value="{{ old('years_in_business', $financialInfo->years_in_business ?? '') }}" required>
                   @error('years_in_business')
                   <div class="text-danger">{{ $message }}</div>
                   @enderror
@@ -69,12 +67,12 @@
       <div class="row">
           <div class="col-md-12">
               <div class="form-group mb-3">
-                  <label class="form-label">Annual Turnover (Enter at least one year) *</label>
+                  <label class="form-label">Annual Turnover (Enter at least one year) <span class="text-danger">*</span></label>
                   <table class="table table-bordered">
                       <thead>
                           <tr>
-                              <th style="width: 40%;">Financial Year</th>
-                              <th style="width: 60%;">Net Turnover (₹)</th>
+                              <th style="width: 30%;">Financial Year</th>
+                              <th style="width: 70%;">Net Turnover (₹)</th>
                           </tr>
                       </thead>
                       <tbody>

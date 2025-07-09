@@ -9,7 +9,8 @@
                 <h4 class="mb-sm-0">Verticals</h4>
                 <div class="page-title-right">
                     <ol class="breadcrumb m-0">
-                        <li class="breadcrumb-item"><a href="javascript: void(0);">Pages</a></li>
+                        <li class="breadcrumb-item"><a href="javascript: void(0);">Master</a></li>
+                        <li class="breadcrumb-item"><a href="javascript: void(0);">Product Master</a></li>
                         <li class="breadcrumb-item active">Vertical List</li>
                     </ol>
                 </div>
@@ -22,7 +23,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center">
-                    <h5 class="card-title mb-0">Vertical Records</h5>
+                    <h5 class="card-title mb-0">Vertical List</h5>
                     <div>
                         <a href="{{ route('verticals.export') }}" class="btn btn-success btn-sm">
                             <i class="fas fa-file-excel me-1"></i> Export Excel

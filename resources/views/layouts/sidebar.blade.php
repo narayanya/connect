@@ -5,7 +5,7 @@
         <!-- Dark Logo-->
         <a href="index.html" class="logo logo-dark">
             <span class="logo-sm">
-                <img src="{{ asset('assets/images/logo-sm.png') }}" alt="" height="22">
+                <img src="{{ asset('assets/images/connect-icon.png') }}" alt="" height="22">
             </span>
             <span class="logo-lg">
                 <img src="{{ asset('assets/images/ojas_dark.png') }}" alt="" height="17">
@@ -14,7 +14,7 @@
         <!-- Light Logo-->
         <a href="/home" class="logo logo-light">
             <span class="logo-sm">
-                <img src="{{ asset('assets/images/logo-sm.png') }}" alt="" style="height:22px !important;">
+                <img src="{{ asset('assets/images/connect-icon.png') }}" alt="" style="height:22px !important;">
             </span>
             <span class="logo-lg">
                 <img src="{{ asset('assets/images/connect-logo.png') }}" alt="" style="height:24px !important;">

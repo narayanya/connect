@@ -11,20 +11,20 @@
     $gstDoc = $documentsCollection->firstWhere('type', 'gst');
 @endphp
 <div id="entity-details" class="form-section">
-    <h5 class="mb-4">Entity Details</h5>
-
+    <h5 class="mb-3">Entity Details</h5>
+    <hr>
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-3">
             <div class="form-group mb-3">
                 <label for="establishment_name" class="form-label">Name of Establishment <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="establishment_name" name="establishment_name"
+                <input type="text" class="form-control" id="establishment_name" name="establishment_name" placeholder="Name of Establishment"
                     value="{{ old('establishment_name', isset($application->entityDetails) ? $application->entityDetails->establishment_name : '') }}" required>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-3">
             <div class="form-group mb-3">
                 <label for="entity_type" class="form-label">Type/Nature of Establishment <span class="text-danger">*</span></label>
-                <select class="form-control" id="entity_type" name="entity_type" required onchange="showRelevantFields()">
+                <select class="form-select form-control" id="entity_type" name="entity_type" required onchange="showRelevantFields()">
                     <option value="">Select Type</option>
                     @foreach(['sole_proprietorship' => 'Sole Proprietorship', 'partnership' => 'Partnership', 'llp' => 'Limited Liability Partnership (LLP)', 'private_company' => 'Private Company', 'public_company' => 'Public Company', 'cooperative_society' => 'Cooperative Societies', 'trust' => 'Trust'] as $value => $label)
                     <option value="{{ $value }}"
@@ -45,50 +45,50 @@
             </div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="form-group mb-3">
                             <label for="proprietor_name" class="form-label">Name of Proprietor <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="proprietor_name" name="proprietor_name"
+                            <input type="text" class="form-control" id="proprietor_name" name="proprietor_name" placeholder="Name of Proprietor"
                                 value="{{ old('proprietor_name', isset($application->entityDetails->additional_data['proprietor']['name']) ? $application->entityDetails->additional_data['proprietor']['name'] : '') }}" required>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="form-group mb-3">
                             <label for="proprietor_dob" class="form-label">Date of Birth <span class="text-danger">*</span></label>
                             <input type="date" class="form-control" id="proprietor_dob" name="proprietor_dob"
                                 value="{{ old('proprietor_dob', isset($application->entityDetails->additional_data['proprietor']['dob']) ? $application->entityDetails->additional_data['proprietor']['dob'] : '') }}" required>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="form-group mb-3">
-                            <label for="proprietor_father_name" class="form-label">Father's/Husband's Name <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="proprietor_father_name" name="proprietor_father_name"
-                                value="{{ old('proprietor_father_name', isset($application->entityDetails->additional_data['proprietor']['father_name']) ? $application->entityDetails->additional_data['proprietor']['father_name'] : '') }}" required>
-                        </div>
-                    </div>
-                </div>
-                <h6 class="mt-4 mb-3">Permanent Address</h6>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group mb-3">
-                            <label for="proprietor_address" class="form-label">Full Address <span class="text-danger">*</span></label>
-                            <textarea class="form-control" id="proprietor_address" name="proprietor_address" rows="2" required>{{ old('proprietor_address', isset($application->entityDetails->additional_data['proprietor']['address']) ? $application->entityDetails->additional_data['proprietor']['address'] : '') }}</textarea>
-                        </div>
-                    </div>
                     <div class="col-md-3">
                         <div class="form-group mb-3">
-                            <label for="proprietor_pincode" class="form-label">Pincode <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="proprietor_pincode" name="proprietor_pincode"
-                                value="{{ old('proprietor_pincode', isset($application->entityDetails->additional_data['proprietor']['pincode']) ? $application->entityDetails->additional_data['proprietor']['pincode'] : '') }}" required>
+                            <label for="proprietor_father_name" class="form-label">Father's/Husband's Name <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="proprietor_father_name" name="proprietor_father_name" placeholder="Father's/Husband's Name"
+                                value="{{ old('proprietor_father_name', isset($application->entityDetails->additional_data['proprietor']['father_name']) ? $application->entityDetails->additional_data['proprietor']['father_name'] : '') }}" required>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group mb-3">
                             <label for="proprietor_country" class="form-label">Country <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="proprietor_country" name="proprietor_country"
+                            <input type="text" class="form-control" id="proprietor_country" name="proprietor_country" placeholder="Country"
                                 value="{{ old('proprietor_country', isset($application->entityDetails->additional_data['proprietor']['country']) ? $application->entityDetails->additional_data['proprietor']['country'] : 'India') }}" required>
                         </div>
                     </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group mb-3">
+                            <label for="proprietor_address" class="form-label">Permanent Address <span class="text-danger">*</span></label>
+                            <textarea class="form-control" placeholder="Permanent Address" id="proprietor_address" name="proprietor_address" rows="2" required>{{ old('proprietor_address', isset($application->entityDetails->additional_data['proprietor']['address']) ? $application->entityDetails->additional_data['proprietor']['address'] : '') }}</textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group mb-3">
+                            <label for="proprietor_pincode" class="form-label">Pincode <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="proprietor_pincode" name="proprietor_pincode" placeholder="Pincode"
+                                value="{{ old('proprietor_pincode', isset($application->entityDetails->additional_data['proprietor']['pincode']) ? $application->entityDetails->additional_data['proprietor']['pincode'] : '') }}" required>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -110,38 +110,37 @@
                     }
                     @endphp
                     @foreach($partners as $index => $partner)
-                    <div class="partner-entry mb-4 border-bottom pb-3">
+                    <div class="partner-entry mb-2 border-bottom pb-3">
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-2">
                                 <div class="form-group mb-3">
                                     <label class="form-label">Partner Name <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" name="partner_name[]" value="{{ old("partner_name.$index", $partner['name'] ?? '') }}" required>
+                                    <input type="text" class="form-control" name="partner_name[]" value="{{ old("partner_name.$index", $partner['name'] ?? '') }}" placeholder="Partner Name" required>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-2">
                                 <div class="form-group mb-3">
                                     <label class="form-label">Father's/Husband's Name <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" name="partner_father_name[]" value="{{ old("partner_father_name.$index", $partner['father_name'] ?? '') }}" required>
+                                    <input type="text" class="form-control" name="partner_father_name[]" value="{{ old("partner_father_name.$index", $partner['father_name'] ?? '') }}" placeholder="Father's/Husband's Name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group mb-3">
+                                    <label class="form-label">Contact Number <span class="text-danger">*</span></label>
+                                    <input type="tel" class="form-control" name="partner_contact[]" placeholder="Contact Number" value="{{ old("partner_contact.$index", $partner['contact'] ?? '') }}" required>
+                                </div>
+                            </div>
+                       
+                            <div class="col-md-2">
+                                <div class="form-group mb-3">
+                                    <label class="form-label">Email ID <span class="text-danger">*</span></label>
+                                    <input type="email" class="form-control" name="partner_email[]" placeholder="Email ID" value="{{ old("partner_email.$index", $partner['email'] ?? '') }}" required>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group mb-3">
-                                    <label class="form-label">Contact Number <span class="text-danger">*</span></label>
-                                    <input type="tel" class="form-control" name="partner_contact[]" value="{{ old("partner_contact.$index", $partner['contact'] ?? '') }}" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group mb-3">
-                                    <label class="form-label">Email Address <span class="text-danger">*</span></label>
-                                    <input type="email" class="form-control" name="partner_email[]" value="{{ old("partner_email.$index", $partner['email'] ?? '') }}" required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group mb-3">
                                     <label class="form-label">Full Address <span class="text-danger">*</span></label>
-                                    <textarea class="form-control" name="partner_address[]" rows="2" required>{{ old("partner_address.$index", $partner['address'] ?? '') }}</textarea>
+                                    <input type="text" class="form-control" name="partner_address[]" placeholder="Full Address" rows="2" required value="{{ old("partner_address.$index", $partner['address'] ?? '') }}">
                                 </div>
                             </div>
                         </div>
@@ -169,31 +168,34 @@
                     }
                     @endphp
                     @foreach($llpPartners as $index => $partner)
-                    <div class="llp-partner-entry mb-4 border-bottom pb-3">
+                    <div class="llp-partner-entry mb-2 border-bottom pb-3">
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-2">
                                 <div class="form-group mb-3">
                                     <label class="form-label">Partner Name <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" name="llp_partner_name[]" value="{{ old("llp_partner_name.$index", $partner['name'] ?? '') }}" required>
+                                    <input type="text" class="form-control" name="llp_partner_name[]" placeholder="Partner Name" value="{{ old("llp_partner_name.$index", $partner['name'] ?? '') }}" required>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-2">
                                 <div class="form-group mb-3">
                                     <label class="form-label">DPIN Number <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" name="llp_partner_dpin[]" value="{{ old("llp_partner_dpin.$index", $partner['dpin_number'] ?? '') }}" required>
+                                    <input type="text" class="form-control" name="llp_partner_dpin[]" placeholder="DPIN Number" value="{{ old("llp_partner_dpin.$index", $partner['dpin_number'] ?? '') }}" required>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-2">
                                 <div class="form-group mb-3">
                                     <label class="form-label">Contact Number <span class="text-danger">*</span></label>
-                                    <input type="tel" class="form-control" name="llp_partner_contact[]" value="{{ old("llp_partner_contact.$index", $partner['contact'] ?? '') }}" required>
+                                    <input type="tel" class="form-control" name="llp_partner_contact[]" placeholder="Contact Number" value="{{ old("llp_partner_contact.$index", $partner['contact'] ?? '') }}" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label class="form-label">Full Address <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" name="llp_partner_address[]" placeholder="Full Address" rows="2" required value="{{ old("llp_partner_address.$index", $partner['address'] ?? '') }}">
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group mb-3">
-                            <label class="form-label">Full Address <span class="text-danger">*</span></label>
-                            <textarea class="form-control" name="llp_partner_address[]" rows="2" required>{{ old("llp_partner_address.$index", $partner['address'] ?? '') }}</textarea>
-                        </div>
+                        
                         <button type="button" class="btn btn-sm btn-danger" onclick="removeLLPPartner(this)">Remove</button>
                     </div>
                     @endforeach
@@ -204,14 +206,14 @@
             <div class="col-md-6">
                 <div class="form-group mb-3">
                     <label for="llpin_number" class="form-label">LLPIN Number <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="llpin_number" name="llpin_number"
+                    <input type="text" class="form-control" id="llpin_number" placeholder="LLPIN Number" name="llpin_number"
                         value="{{ old('llpin_number', isset($application->entityDetails->additional_data['llp']['llpin_number']) ? $application->entityDetails->additional_data['llp']['llpin_number'] : '') }}" required>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group mb-3">
                     <label for="llp_incorporation_date" class="form-label">Date of Incorporation <span class="text-danger">*</span></label>
-                    <input type="date" class="form-control" id="llp_incorporation_date" name="llp_incorporation_date"
+                    <input type="date" class="form-control" id="llp_incorporation_date" name="llp_incorporation_date" placeholder="Date of Incorporation"
                         value="{{ old('llp_incorporation_date', isset($application->entityDetails->additional_data['llp']['incorporation_date']) ? $application->entityDetails->additional_data['llp']['incorporation_date'] : '') }}" required>
                 </div>
             </div>
@@ -234,32 +236,35 @@
                     }
                     @endphp
                     @foreach($directors as $index => $director)
-                    <div class="director-entry mb-4 border-bottom pb-3">
+                    <div class="director-entry mb-2 border-bottom pb-3">
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-2">
                                 <div class="form-group mb-3">
                                     <label class="form-label">Director Name <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" name="director_name[]" value="{{ old("director_name.$index", $director['name'] ?? '') }}" required>
+                                    <input type="text" class="form-control" name="director_name[]" placeholder="Director Name" value="{{ old("director_name.$index", $director['name'] ?? '') }}" required>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-2">
                                 <div class="form-group mb-3">
                                     <label class="form-label">DIN Number <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" name="director_din[]" value="{{ old("director_din.$index", $director['din_number'] ?? '') }}" required>
+                                    <input type="text" class="form-control" name="director_din[]" placeholder="DIN Number" value="{{ old("director_din.$index", $director['din_number'] ?? '') }}" required>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-2">
                                 <div class="form-group mb-3">
                                     <label class="form-label">Contact Number <span class="text-danger">*</span></label>
-                                    <input type="tel" class="form-control" name="director_contact[]" value="{{ old("director_contact.$index", $director['contact'] ?? '') }}" required>
+                                    <input type="tel" class="form-control" name="director_contact[]" placeholder="Contact Number" value="{{ old("director_contact.$index", $director['contact'] ?? '') }}" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label class="form-label">Full Address <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" name="director_address[]" placeholder="Full Address"  required value="{{ old("director_address.$index", $director['address'] ?? '') }}">
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group mb-3">
-                            <label class="form-label">Full Address <span class="text-danger">*</span></label>
-                            <textarea class="form-control" name="director_address[]" rows="2" required>{{ old("director_address.$index", $director['address'] ?? '') }}</textarea>
-                        </div>
-                        <button type="button" class="btn btnsm btnWI danger" onclick="removeDirector(this)">Remove</button>
+                        
+                        <button type="button" class="btn btn-sm btn-danger btnWI danger" onclick="removeDirector(this)">Remove</button>
                     </div>
                     @endforeach
                 </div>
@@ -269,7 +274,7 @@
             <div class="col-md-6">
                 <div class="form-group mb-3">
                     <label for="cin_number" class="form-label">CIN Number <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="cin_number" name="cin_number"
+                    <input type="text" class="form-control" id="cin_number" name="cin_number" placeholder="CIN Number"
                         value="{{ old('cin_number', isset($application->entityDetails->additional_data['company']['cin_number']) ? $application->entityDetails->additional_data['company']['cin_number'] : '') }}" required>
                 </div>
             </div>
@@ -299,31 +304,34 @@
                     }
                     @endphp
                     @foreach($committeeMembers as $index => $member)
-                    <div class="committee-entry mb-4 border-bottom pb-3">
+                    <div class="committee-entry mb-2 border-bottom pb-3">
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-2">
                                 <div class="form-group mb-3">
                                     <label class="form-label">Member Name <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" name="committee_name[]" value="{{ old("committee_name.$index", $member['name'] ?? '') }}" required>
+                                    <input type="text" class="form-control" name="committee_name[]" placeholder="Member Name" value="{{ old("committee_name.$index", $member['name'] ?? '') }}" required>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-2">
                                 <div class="form-group mb-3">
                                     <label class="form-label">Designation <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" name="committee_designation[]" value="{{ old("committee_designation.$index", $member['designation'] ?? '') }}" required>
+                                    <input type="text" class="form-control" name="committee_designation[]" placeholder="Designation" value="{{ old("committee_designation.$index", $member['designation'] ?? '') }}" required>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-2">
                                 <div class="form-group mb-3">
                                     <label class="form-label">Contact Number <span class="text-danger">*</span></label>
-                                    <input type="tel" class="form-control" name="committee_contact[]" value="{{ old("committee_contact.$index", $member['contact'] ?? '') }}" required>
+                                    <input type="tel" class="form-control" name="committee_contact[]" placeholder="Contact Number" value="{{ old("committee_contact.$index", $member['contact'] ?? '') }}" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label class="form-label">Full Address <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" name="committee_address[]" placeholder="Full Address" required value="{{ old("committee_address.$index", $member['address'] ?? '') }}">
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group mb-3">
-                            <label class="form-label">Full Address <span class="text-danger">*</span></label>
-                            <textarea class="form-control" name="committee_address[]" rows="2" required>{{ old("committee_address.$index", $member['address'] ?? '') }}</textarea>
-                        </div>
+                        
                         <button type="button" class="btn btn-sm btn-danger" onclick="removeCommitteeMember(this)">Remove</button>
                     </div>
                     @endforeach
@@ -334,7 +342,7 @@
             <div class="col-md-6">
                 <div class="form-group mb-3">
                     <label for="cooperative_reg_number" class="form-label">Registration Number <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="cooperative_reg_number" name="cooperative_reg_number"
+                    <input type="text" class="form-control" id="cooperative_reg_number" name="cooperative_reg_number" placeholder="Registration Number"
                         value="{{ old('cooperative_reg_number', isset($application->entityDetails->additional_data['cooperative']['reg_number']) ? $application->entityDetails->additional_data['cooperative']['reg_number'] : '') }}" required>
                 </div>
             </div>
@@ -364,31 +372,34 @@
                     }
                     @endphp
                     @foreach($trustees as $index => $trustee)
-                    <div class="trustee-entry mb-4 border-bottom pb-3">
+                    <div class="trustee-entry mb-2 border-bottom pb-3">
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-2">
                                 <div class="form-group mb-3">
                                     <label class="form-label">Trustee Name <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" name="trustee_name[]" value="{{ old("trustee_name.$index", $trustee['name'] ?? '') }}" required>
+                                    <input type="text" class="form-control" name="trustee_name[]" placeholder="Trustee Name" value="{{ old("trustee_name.$index", $trustee['name'] ?? '') }}" required>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-2">
                                 <div class="form-group mb-3">
                                     <label class="form-label">Designation <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" name="trustee_designation[]" value="{{ old("trustee_designation.$index", $trustee['designation'] ?? '') }}" required>
+                                    <input type="text" class="form-control" name="trustee_designation[]" placeholder="Designation" value="{{ old("trustee_designation.$index", $trustee['designation'] ?? '') }}" required>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-2">
                                 <div class="form-group mb-3">
                                     <label class="form-label">Contact Number <span class="text-danger">*</span></label>
-                                    <input type="tel" class="form-control" name="trustee_contact[]" value="{{ old("trustee_contact.$index", $trustee['contact'] ?? '') }}" required>
+                                    <input type="tel" class="form-control" name="trustee_contact[]" placeholder="Contact Number" value="{{ old("trustee_contact.$index", $trustee['contact'] ?? '') }}" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mb-3">
+                                    <label class="form-label">Full Address <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" name="trustee_address[]" placeholder="Full Address" required value=" {{ old("trustee_address.$index", $trustee['address'] ?? '') }}">
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group mb-3">
-                            <label class="form-label">Full Address <span class="text-danger">*</span></label>
-                            <textarea class="form-control" name="trustee_address[]" rows="2" required>{{ old("trustee_address.$index", $trustee['address'] ?? '') }}</textarea>
-                        </div>
+                        
                         <button type="button" class="btn btn-sm btn-danger" onclick="removeTrustee(this)">Remove</button>
                     </div>
                     @endforeach
@@ -399,7 +410,7 @@
             <div class="col-md-6">
                 <div class="form-group mb-3">
                     <label for="trust_reg_number" class="form-label">Registration Number <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="trust_reg_number" name="trust_reg_number"
+                    <input type="text" class="form-control" id="trust_reg_number" name="trust_reg_number" placeholder="Registration Number"
                         value="{{ old('trust_reg_number', isset($application->entityDetails->additional_data['trust']['reg_number']) ? $application->entityDetails->additional_data['trust']['reg_number'] : '') }}" required>
                 </div>
             </div>
@@ -418,38 +429,40 @@
         <div class="col-md-4">
             <div class="form-group mb-3">
                 <label for="business_address" class="form-label">Business Place/Shop Address <span class="text-danger">*</span></label>
-                <textarea class="form-control" id="business_address" name="business_address" rows="2" required>{{ old('business_address', isset($application->entityDetails) ? $application->entityDetails->business_address : '') }}</textarea>
+                <textarea class="form-control" id="business_address" name="business_address" rows="2" placeholder="Business Place/Shop Address" required>{{ old('business_address', isset($application->entityDetails) ? $application->entityDetails->business_address : '') }}</textarea>
             </div>
         </div>
         <div class="col-md-4">
             <div class="form-group mb-3">
                 <label for="house_no" class="form-label">House No. / Building</label>
-                <input type="text" class="form-control" id="house_no" name="house_no"
+                <input type="text" class="form-control" id="house_no" name="house_no" placeholder="House No. / Building"
                     value="{{ old('house_no', isset($application->entityDetails) ? $application->entityDetails->house_no : '') }}">
             </div>
         </div>
         <div class="col-md-4">
             <div class="form-group mb-3">
                 <label for="landmark" class="form-label">Landmark</label>
-                <input type="text" class="form-control" id="landmark" name="landmark"
+                <input type="text" class="form-control" id="landmark" name="landmark" placeholder="Landmark"
                     value="{{ old('landmark', isset($application->entityDetails) ? $application->entityDetails->landmark : '') }}">
             </div>
         </div>
     </div>
     <div class="row">
-        <!-- City -->
+        <!-- Country -->
         <div class="col-md-2">
             <div class="form-group mb-3">
-                <label for="city" class="form-label">City <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="city" name="city"
-                    value="{{ old('city', isset($application->entityDetails) ? $application->entityDetails->city : '') }}" required>
+                <label for="country" class="form-label">Country <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="country" name="country" placeholder="Country"
+                    value="India" readonly>
+                <input type="hidden" name="country_id" value="1">
             </div>
         </div>
+        
         <!-- State -->
         <div class="col-md-3">
             <div class="form-group mb-3">
                 <label for="state_id" class="form-label">State <span class="text-danger">*</span></label>
-                <select class="form-select" id="state_id" name="state_id" required>
+                <select class="form-select form-control" id="state_id" name="state_id" required>
                     <option value="">-- Select State --</option>
                     @foreach($states as $state)
                     <option value="{{ $state->id }}"
@@ -464,7 +477,7 @@
         <div class="col-md-3">
             <div class="form-group mb-3">
                 <label for="district_id" class="form-label">District <span class="text-danger">*</span></label>
-                <select class="form-select" id="district_id" name="district_id" required>
+                <select class="form-select form-control" id="district_id" name="district_id" required>
                     <option value="">Select District</option>
                     @if(isset($application->entityDetails) && $application->entityDetails->district_id)
                         @php
@@ -477,98 +490,95 @@
                 </select>
             </div>
         </div>
+        <!-- City -->
+        <div class="col-md-2">
+            <div class="form-group mb-3">
+                <label for="city" class="form-label">City <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="city" name="city" placeholder="City"
+                    value="{{ old('city', isset($application->entityDetails) ? $application->entityDetails->city : '') }}" required>
+            </div>
+        </div>
         <!-- Pincode -->
         <div class="col-md-2">
             <div class="form-group mb-3">
                 <label for="pincode" class="form-label">Pincode <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="pincode" name="pincode"
+                <input type="text" class="form-control" id="pincode" name="pincode" placeholder="Pincode"
                     value="{{ old('pincode', isset($application->entityDetails) ? $application->entityDetails->pincode : '') }}" required>
             </div>
         </div>
-        <!-- Country -->
-        <div class="col-md-2">
-            <div class="form-group mb-3">
-                <label for="country" class="form-label">Country <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="country" name="country"
-                    value="India" readonly>
-                <input type="hidden" name="country_id" value="1">
-            </div>
-        </div>
+        
     </div>
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
             <div class="form-group mb-3">
                 <label for="mobile" class="form-label">Mobile Number <span class="text-danger">*</span></label>
-                <input type="tel" class="form-control" id="mobile" name="mobile"
+                <input type="tel" class="form-control" id="mobile" name="mobile" placeholder="Mobile Number"
                     value="{{ old('mobile', isset($application->entityDetails) ? $application->entityDetails->mobile : '') }}" required>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
             <div class="form-group mb-3">
                 <label for="email" class="form-label">Email Address <span class="text-danger">*</span></label>
-                <input type="email" class="form-control" id="email" name="email"
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email Address"
                     value="{{ old('edit', isset($application->entityDetails) ? $application->entityDetails->email : '') }}" required>
             </div>
         </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="pan_number" class="form-label">PAN Number <span class="text-danger">*</span></label>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="pan_number" name="pan_number" placeholder="PAN Number"
+                        value="{{ old('pan_number', $panDoc['details']['pan_number'] ?? ($application->entityDetails->pan_number ?? '')) }}"
+                        required>
+                    <input type="file" class="form-control d-none" id="pan_file" name="pan_file" accept=".pdf,.jpg,.jpeg,.png">
+                    <button type="button" class="btn btn-outline-secondary" id="pan_upload_btn">Upload</button>
+                </div>
+                <div class="form-check mt-2">
+                    <input class="form-check-input" type="checkbox" id="pan_verified" name="pan_verified"
+                        {{ old('pan_verified', $panDoc['verified'] ?? false) ? 'checked' : '' }}>
+                    <label class="form-check-label" for="pan_verified">
+                        I confirm the PAN number matches the uploaded document
+                    </label>
+                </div>
+                <div id="pan_file_name" class="small text-muted mt-1 {{ $panDoc ? '' : 'd-none' }}">
+                    @if($panDoc)
+                        <a href="{{ asset('storage/' . $panDoc['path']) }}" target="_blank">View PAN Document</a> (Uploaded
+                        on {{ $panDoc['remarks'] }})
+                        <input type="hidden" name="existing_pan_file" value="{{ $panDoc['path'] }}">
+                    @endif
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="row">
-                    <div class="col-md-6">
-    <div class="form-group mb-3">
-        <label for="pan_number" class="form-label">PAN Number <span class="text-danger">*</span></label>
-        <div class="input-group">
-            <input type="text" class="form-control" id="pan_number" name="pan_number"
-                   value="{{ old('pan_number', $panDoc['details']['pan_number'] ?? ($application->entityDetails->pan_number ?? '')) }}"
-                   required>
-            <input type="file" class="form-control d-none" id="pan_file" name="pan_file" accept=".pdf,.jpg,.jpeg,.png">
-            <button type="button" class="btn btn-outline-secondary" id="pan_upload_btn">Upload</button>
+    <div class="row">              
+        <div class="col-md-3">
+                <div class="form-group mb-3">
+                    <label for="gst_applicable" class="form-label">GST Applicable <span class="text-danger">*</span></label>
+                    <select class="form-select form-control" id="gst_applicable" name="gst_applicable" required onchange="toggleGSTFields()">
+                        <option value="" disabled {{ old('gst_applicable', isset($application->entityDetails) ? '' : 'selected') }}>-- Select --</option>
+                        <option value="yes" {{ old('gst_applicable', isset($application->entityDetails) && $application->entityDetails->gst_applicable === 'yes' ? 'selected' : '') }}>Yes</option>
+                        <option value="no" {{ old('gst_applicable', isset($application->entityDetails) && $application->entityDetails->gst_applicable === 'no' ? 'selected' : '') }}>No</option>
+                    </select>
+                </div>
         </div>
-        <div class="form-check mt-2">
-            <input class="form-check-input" type="checkbox" id="pan_verified" name="pan_verified"
-                   {{ old('pan_verified', $panDoc['verified'] ?? false) ? 'checked' : '' }}>
-            <label class="form-check-label" for="pan_verified">
-                I confirm the PAN number matches the uploaded document
-            </label>
-        </div>
-        <div id="pan_file_name" class="small text-muted mt-1 {{ $panDoc ? '' : 'd-none' }}">
-            @if($panDoc)
-                <a href="{{ asset('storage/' . $panDoc['path']) }}" target="_blank">View PAN Document</a> (Uploaded
-                on {{ $panDoc['remarks'] }})
-                <input type="hidden" name="existing_pan_file" value="{{ $panDoc['path'] }}">
-            @endif
-        </div>
-    </div>
-</div>
-<div class="col-md-6">
-        <div class="form-group mb-3">
-            <label for="gst_applicable" class="form-label">GST Applicable <span class="text-danger">*</span></label>
-            <select class="form-control" id="gst_applicable" name="gst_applicable" required onchange="toggleGSTFields()">
-                <option value="" disabled {{ old('gst_applicable', isset($application->entityDetails) ? '' : 'selected') }}>-- Select --</option>
-                <option value="yes" {{ old('gst_applicable', isset($application->entityDetails) && $application->entityDetails->gst_applicable === 'yes' ? 'selected' : '') }}>Yes</option>
-                <option value="no" {{ old('gst_applicable', isset($application->entityDetails) && $application->entityDetails->gst_applicable === 'no' ? 'selected' : '') }}>No</option>
-            </select>
-        </div>
-</div>
-
-    </div>
-        <div id="gst_fields" style="display: {{ old('gst_applicable', ($application->entityDetails->gst_applicable ?? ($gstDoc ? 'yes' : 'no'))) === 'yes' ? 'block' : 'none' }};">
+        <div class="col-md-9" id="gst_fields" style="display: {{ old('gst_applicable', ($application->entityDetails->gst_applicable ?? ($gstDoc ? 'yes' : 'no'))) === 'yes' ? 'block' : 'none' }};">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="form-group mb-3">
                     <label for="gst_number" class="form-label">GST Number <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="gst_number" name="gst_number"
+                    <input type="text" class="form-control" id="gst_number" name="gst_number" placeholder="GST Number"
                     value="{{ old('gst_number', $gstDoc['details']['gst_number'] ?? ($application->entityDetails->gst_number ?? '')) }}">
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="form-group mb-3">
                     <label for="gst_validity" class="form-label">GST Validity Date <span class="text-danger">*</span></label>
                     <input type="date" class="form-control" id="gst_validity" name="gst_validity"
                     value="{{ old('gst_validity', $gstDoc['details']['gst_validity'] ?? ($application->entityDetails->additional_data['gst_validity'] ?? '')) }}">
              </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
+       
+            <div class="col-md-4">
                 <div class="form-group mb-3">
                     <label for="gst_file" class="form-label">Upload GST Document <span class="text-danger">*</span></label>
                     <div class="input-group">
@@ -585,12 +595,14 @@
             </div>
         </div>
     </div>
+    </div>
+        
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
             <div class="form-group mb-3">
                 <label for="seed_license" class="form-label">Seed License Number <span class="text-danger">*</span></label>
                 <div class="input-group">
-                    <input type="text" class="form-control" id="seed_license" name="seed_license"
+                    <input type="text" class="form-control" id="seed_license" name="seed_license" placeholder="Seed License Number"
                         value="{{ old('seed_license', $seedLicenseDoc['details']['seed_license_number'] ?? ($application->entityDetails->seed_license ?? '')) }}" required>
                     <input type="file" class="form-control d-none" id="seed_license_file" name="seed_license_file" accept=".pdf,.jpg,.jpeg,.png">
                     <button type="button" class="btn btn-outline-secondary" id="seed_license_upload_btn">Upload</button>
@@ -610,19 +622,17 @@
             </div>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
             <div class="form-group mb-3">
             <label for="seed_license_validity" class="form-label">Seed License Validity Date <span class="text-danger">*</span></label>
             <input type="date" class="form-control" id="seed_license_validity" name="seed_license_validity"
                 value="{{ old('seed_license_validity', $seedLicenseDoc['details']['seed_license_validity'] ?? ($application->entityDetails->additional_data['seed_license_validity'] ?? '')) }}" required>
         </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
             <div class="form-group mb-3">
                 <label for="tan_number" class="form-label">TAN Number (if any)</label>
-                <input type="text" class="form-control" id="tan_number" name="tan_number"
+                <input type="text" class="form-control" id="tan_number" name="tan_number" placeholder="TAN Number"
                     value="{{ old('tan_number', isset($application->entityDetails->additional_data['tan_number']) ? $application->entityDetails->additional_data['tan_number'] : '') }}">
             </div>
         </div>
@@ -631,21 +641,21 @@
     <!-- Bank Details -->
     <div class="row">
         <div class="col-md-12">
-            <h4>Bank Details</h4>
+            <h5>Bank Details</h5><hr>
         </div>
     </div>
     <div class="row">
         <div class="col-md-3">
             <div class="form-group mb-3">
                 <label for="bank_name" class="form-label">Name of the Bank <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="bank_name" name="bank_name"
+                <input type="text" class="form-control" id="bank_name" name="bank_name" placeholder="Name of the Bank"
                     value="{{ old('bank_name', $bankDoc['details']['bank_name'] ?? ($application->entityDetails->additional_data['bank_details']['bank_name'] ?? '')) }}" required>
             </div>
         </div>
         <div class="col-md-3">
             <div class="form-group mb-3">
                 <label for="account_holder" class="form-label">Name of Bank Account Holder <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="account_holder" name="account_holder"
+                <input type="text" class="form-control" id="account_holder" name="account_holder" placeholder="Name of Bank Account Holder"
                     value="{{ old('account_holder', $bankDoc['details']['account_holder'] ?? ($application->entityDetails->additional_data['bank_details']['account_holder'] ?? '')) }}" required>
             </div>
         </div>
@@ -653,14 +663,14 @@
         <div class="col-md-3">
             <div class="form-group mb-3">
                 <label for="account_number" class="form-label">Account Number <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="account_number" name="account_number"
+                <input type="text" class="form-control" id="account_number" name="account_number" placeholder="Account Number"
                     value="{{ old('account_number', $bankDoc['details']['account_number'] ?? ($application->entityDetails->additional_data['bank_details']['account_number'] ?? '')) }}" required>
             </div>
         </div>
         <div class="col-md-3">
             <div class="form-group mb-3">
                 <label for="ifsc_code" class="form-label">IFSC Code of Bank <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="ifsc_code" name="ifsc_code"
+                <input type="text" class="form-control" id="ifsc_code" name="ifsc_code" placeholder="IFSC Code of Bank"
                     value="{{ old('ifsc_code', $bankDoc['details']['ifsc_code'] ?? ($application->entityDetails->additional_data['bank_details']['ifsc_code'] ?? '')) }}" required>
             </div>
         </div>
@@ -698,36 +708,39 @@
                 }
                 @endphp
                 @foreach($authPersons as $index => $person)
-                <div class="authorized-person-entry mb-4 border-bottom pb-3">
+                <div class="authorized-person-entry mb-2 border-bottom pb-3">
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                             <div class="form-group mb-3">
                                 <label class="form-label">Name <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" name="auth_person_name[]" value="{{ old("auth_person_name.$index", $person['name'] ?? '') }}" data-required-if-filled>
+                                <input type="text" class="form-control" name="auth_person_name[]" placeholder="Name" value="{{ old("auth_person_name.$index", $person['name'] ?? '') }}" data-required-if-filled>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                             <div class="form-group mb-3">
                                 <label class="form-label">Contact Number <span class="text-danger">*</span></label>
-                                <input type="tel" class="form-control" name="auth_person_contact[]" value="{{ old("auth_person_contact.$index", $person['contact'] ?? '') }}" data-required-if-filled>
+                                <input type="tel" class="form-control" name="auth_person_contact[]" placeholder="Contact Number" value="{{ old("auth_person_contact.$index", $person['contact'] ?? '') }}" data-required-if-filled>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                             <div class="form-group mb-3">
                                 <label class="form-label">Email Address</label>
-                                <input type="email" class="form-control" name="auth_person_email[]" value="{{ old("auth_person_email.$index", $person['email'] ?? '') }}">
+                                <input type="email" class="form-control" name="auth_person_email[]" placeholder="Email Address" value="{{ old("auth_person_email.$index", $person['email'] ?? '') }}">
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                             <label class="form-label">Relation with Owner/Entity <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" name="auth_person_relation[]" value="{{ old("auth_person_relation.$index", $person['relation'] ?? '') }}" data-required-if-filled>
+                            <input type="text" class="form-control" name="auth_person_relation[]" placeholder="Relation with Owner/Entity" value="{{ old("auth_person_relation.$index", $person['relation'] ?? '') }}" data-required-if-filled>
                     
                         </div>
+                        <div class="col-md-4">
+                            <div class="form-group mb-3">
+                                <label class="form-label">Full Address <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" name="auth_person_address[]" placeholder="Full Address" data-required-if-filled value="{{ old("auth_person_address.$index", $person['address'] ?? '') }}">
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group mb-3">
-                        <label class="form-label">Full Address <span class="text-danger">*</span></label>
-                        <textarea class="form-control" name="auth_person_address[]" rows="2" data-required-if-filled>{{ old("auth_person_address.$index", $person['address'] ?? '') }}</textarea>
-                    </div>
+                    
                     
                     <button type="button" class="btn btn-sm btn-danger" onclick="removeAuthorizedPerson(this)">Remove</button>
                 </div>
@@ -861,38 +874,38 @@
         function addPartner() {
             const container = document.getElementById('partners_container');
             const newEntry = document.createElement('div');
-            newEntry.className = 'partner-entry mb-4 border-bottom pb-3';
+            newEntry.className = 'partner-entry mb-2 border-bottom pb-3';
             newEntry.innerHTML = `
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <div class="form-group mb-3">
                             <label class="form-label">Partner Name <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" name="partner_name[]" required>
+                            <input type="text" class="form-control" name="partner_name[]" placeholder="Partner Name" required>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <div class="form-group mb-3">
                             <label class="form-label">Father's/Husband's Name <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" name="partner_father_name[]" required>
+                            <input type="text" class="form-control" name="partner_father_name[]" placeholder="Father's/Husband's Name" required>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <div class="form-group mb-3">
                             <label class="form-label">Contact Number <span class="text-danger">*</span></label>
-                            <input type="tel" class="form-control" name="partner_contact[]" required>
+                            <input type="tel" class="form-control" name="partner_contact[]" placeholder="Contact Number" required>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <div class="form-group mb-3">
                             <label class="form-label">Email Address <span class="text-danger">*</span></label>
-                            <input type="email" class="form-control" name="partner_email[]" required>
+                            <input type="email" class="form-control" name="partner_email[]" placeholder="Email Address" required>
                         </div>
                     </div>
             
-                    <div class="col-md-12">
+                    <div class="col-md-4">
                         <div class="form-group mb-3">
                             <label class="form-label">Full Address <span class="text-danger">*</span></label>
-                            <textarea class="form-control" name="partner_address[]" rows="2" required></textarea>
+                            <input type="text" class="form-control" name="partner_address[]" placeholder="Full Address" required>
                         </div>
                     </div>
                 </div>
@@ -913,32 +926,35 @@
         function addLLPPartner() {
             const container = document.getElementById('llp_partners_container');
             const newEntry = document.createElement('div');
-            newEntry.className = 'llp-partner-entry mb-4 border-bottom pb-3';
+            newEntry.className = 'llp-partner-entry mb-2 border-bottom pb-3';
             newEntry.innerHTML = `
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <div class="form-group mb-3">
                             <label class="form-label">Partner Name <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" name="llp_partner_name[]" required>
+                            <input type="text" class="form-control" name="llp_partner_name[]" placeholder="Partner Name" required>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <div class="form-group mb-3">
                             <label class="form-label">DPIN Number <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" name="llp_partner_dpin[]" required>
+                            <input type="text" class="form-control" name="llp_partner_dpin[]" placeholder="DPIN Number" required>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <div class="form-group mb-3">
                             <label class="form-label">Contact Number <span class="text-danger">*</span></label>
-                            <input type="tel" class="form-control" name="llp_partner_contact[]" required>
+                            <input type="tel" class="form-control" name="llp_partner_contact[]" placeholder="Contact Number" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group mb-3">
+                            <label class="form-label">Full Address <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" name="llp_partner_address[]" placeholder="Full Address" required >
                         </div>
                     </div>
                 </div>
-                <div class="form-group mb-3">
-                    <label class="form-label">Full Address <span class="text-danger">*</span></label>
-                    <textarea class="form-control" name="llp_partner_address[]" rows="2" required></textarea>
-                </div>
+                
                 <button type="button" class="btn btn-sm btn-danger" onclick="removeLLPPartner(this)">Remove</button>
             `;
             container.appendChild(newEntry);
@@ -956,32 +972,35 @@
         function addDirector() {
             const container = document.getElementById('directors_container');
             const newEntry = document.createElement('div');
-            newEntry.className = 'director-entry mb-4 border-bottom pb-3';
+            newEntry.className = 'director-entry mb-2 border-bottom pb-3';
             newEntry.innerHTML = `
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <div class="form-group mb-3">
                             <label class="form-label">Director Name <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" name="director_name[]" required>
+                            <input type="text" class="form-control" name="director_name[]" placeholder="Director Name" required>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <div class="form-group mb-3">
                             <label class="form-label">DIN Number <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" name="director_din[]" required>
+                            <input type="text" class="form-control" name="director_din[]" placeholder="DIN Number" required>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <div class="form-group mb-3">
                             <label class="form-label">Contact Number <span class="text-danger">*</span></label>
-                            <input type="tel" class="form-control" name="director_contact[]" required>
+                            <input type="tel" class="form-control" name="director_contact[]" placeholder="Contact Number" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group mb-3">
+                            <label class="form-label">Full Address <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" name="director_address[]" placeholder="Full Address" required>
                         </div>
                     </div>
                 </div>
-                <div class="form-group mb-3">
-                    <label class="form-label">Full Address <span class="text-danger">*</span></label>
-                    <textarea class="form-control" name="director_address[]" rows="2" required></textarea>
-                </div>
+                
                 <button type="button" class="btn btn-sm btn-danger" onclick="removeDirector(this)">Remove</button>
             `;
             container.appendChild(newEntry);
@@ -999,32 +1018,35 @@
         function addCommitteeMember() {
             const container = document.getElementById('committee_container');
             const newEntry = document.createElement('div');
-            newEntry.className = 'committee-entry mb-4 border-bottom pb-3';
+            newEntry.className = 'committee-entry mb-2 border-bottom pb-3';
             newEntry.innerHTML = `
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <div class="form-group mb-3">
                             <label class="form-label">Member Name <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" name="committee_name[]" required>
+                            <input type="text" class="form-control" name="committee_name[]" placeholder="Member Name" required>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <div class="form-group mb-3">
                             <label class="form-label">Designation <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" name="committee_designation[]" required>
+                            <input type="text" class="form-control" name="committee_designation[]" placeholder="Designation" required>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <div class="form-group mb-3">
                             <label class="form-label">Contact Number <span class="text-danger">*</span></label>
-                            <input type="tel" class="form-control" name="committee_contact[]" required>
+                            <input type="tel" class="form-control" name="committee_contact[]" placeholder="Contact Number" required>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group mb-3">
+                            <label class="form-label">Full Address <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" name="committee_address[]" placeholder="Full Address" required>
                         </div>
                     </div>
                 </div>
-                <div class="form-group mb-3">
-                    <label class="form-label">Full Address <span class="text-danger">*</span></label>
-                    <textarea class="form-control" name="committee_address[]" rows="2" required></textarea>
-                </div>
+                
                 <button type="button" class="btn btn-sm btn-danger" onclick="removeCommitteeMember(this)">Remove</button>
             `;
             container.appendChild(newEntry);
@@ -1042,32 +1064,35 @@
         function addTrustee() {
             const container = document.getElementById('trustees_container');
             const newEntry = document.createElement('div');
-            newEntry.className = 'trustee-entry mb-4 border-bottom pb-3';
+            newEntry.className = 'trustee-entry mb-2 border-bottom pb-3';
             newEntry.innerHTML = `
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <div class="form-group mb-3">
                             <label class="form-label">Trustee Name <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" name="trustee_name[]" required>
+                            <input type="text" class="form-control" name="trustee_name[]" placeholder="Trustee Name" required>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <div class="form-group mb-3">
                             <label class="form-label">Designation <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" name="trustee_designation[]" required>
+                            <input type="text" class="form-control" name="trustee_designation[]" placeholder="Designation" required>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <div class="form-group mb-3">
                             <label class="form-label">Contact Number <span class="text-danger">*</span></label>
-                            <input type="tel" class="form-control" name="trustee_contact[]" required>
+                            <input type="tel" class="form-control" name="trustee_contact[]" placeholder="Contact Number" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group mb-3">
+                            <label class="form-label">Full Address <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" name="trustee_address[]" placeholder="Full Address" required>
                         </div>
                     </div>
                 </div>
-                <div class="form-group mb-3">
-                    <label class="form-label">Full Address <span class="text-danger">*</span></label>
-                    <textarea class="form-control" name="trustee_address[]" rows="2" required></textarea>
-                </div>
+                
                 <button type="button" class="btn btn-sm btn-danger" onclick="removeTrustee(this)">Remove</button>
             `;
             container.appendChild(newEntry);
@@ -1088,32 +1113,36 @@
             newEntry.className = 'authorized-person-entry mb-4 border-bottom pb-3';
             newEntry.innerHTML = `
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <div class="form-group mb-3">
                             <label class="form-label">Name <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" name="auth_person_name[]" data-required-if-filled>
+                            <input type="text" class="form-control" name="auth_person_name[]" placeholder="Name" data-required-if-filled>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-2">
                         <div class="form-group mb-3">
                             <label class="form-label">Contact Number <span class="text-danger">*</span></label>
-                            <input type="tel" class="form-control" name="auth_person_contact[]" data-required-if-filled>
+                            <input type="tel" class="form-control" name="auth_person_contact[]" placeholder="Contact Number" data-required-if-filled>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group mb-3">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" class="form-control" placeholder="Email Address" name="auth_person_email[]">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group mb-3">
+                            <label class="form-label">Relation with Owner/Entity <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" name="auth_person_relation[]" placeholder="Relation with Owner/Entity" data-required-if-filled>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group mb-3">
-                            <label class="form-label">Email Address</label>
-                            <input type="email" class="form-control" name="auth_person_email[]">
+                            <label class="form-label">Full Address <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" name="auth_person_address[]" placeholder="Full Address" data-required-if-filled>
                         </div>
                     </div>
-                </div>
-                <div class="form-group mb-3">
-                    <label class="form-label">Full Address <span class="text-danger">*</span></label>
-                    <textarea class="form-control" name="auth_person_address[]" rows="2" data-required-if-filled></textarea>
-                </div>
-                <div class="form-group mb-3">
-                    <label class="form-label">Relation with Owner/Entity <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" name="auth_person_relation[]" data-required-if-filled>
                 </div>
                 <button type="button" class="btn btn-sm btn-danger" onclick="removeAuthorizedPerson(this)">Remove</button>
             `;

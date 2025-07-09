@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Connect - Sign In</title>
-    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}">
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/app.min.css') }}" rel="stylesheet">
@@ -13,8 +13,8 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
         :root {
-            --connect-primary: #4f46e5;
-            --connect-secondary: #7c3aed;
+                --connect-primary: #358176;
+    --connect-secondary: #217468;
             --connect-accent: #06b6d4;
             --connect-dark: #1e293b;
             --connect-light: #f8fafc;
@@ -154,7 +154,7 @@
 
         .form-control {
             width: 100%;
-            padding: 0.875rem 1rem;
+            padding: 6px;
             border: 2px solid #e2e8f0;
             border-radius: 0.75rem;
             font-size: 1rem;
@@ -372,7 +372,9 @@
 
         <div class="left-panel">
             <div class="brand-section">
-                <div class="connect-logo">Connect</div>
+                <div class="connect-logo">
+                    <img src="{{ asset('assets/images/connect-logo.png') }}" alt="" >
+                </div>
                 <p class="brand-tagline">Empowering Financial Decisions</p>
                 <ul class="feature-list">
                     <li>Secure Authentication</li>
@@ -463,7 +465,7 @@
                         @endif
                     </div>
 
-                    <button class="login-btn" type="submit" tabindex="5">
+                    <button class="login-btn" type="submit" tabindex="5" style="padding:8px;">
                         Sign In
                     </button>
                     <div class="register-link">

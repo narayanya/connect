@@ -1,6 +1,6 @@
 <div id="business-plan" class="form-section">
-    <h5 class="mb-4">Business Plan (Next Two Years)</h5>
-
+    <h5 class="mb-3">Business Plan (Next Two Years)</h5>
+    <hr>
     @php
         // Get the specific year IDs we need
         $year2025 = App\Models\Year::where('period', '2025-26')->first();
@@ -26,12 +26,12 @@
     @endphp
 
     <table class="table table-bordered">
-        <thead>
+        <thead class="bg-light">
             <tr>
-                <th style="width: 50%;">Crop *</th>
-                <th style="width: 20%;">FY 2025-26 (MT) *</th>
-                <th style="width: 20%;">FY 2026-27 (MT) *</th>
-                <th style="width: 10%;">Action</th>
+                <th style="width: 50%;padding:5px;">Crop <span class="text-danger">*</span></th>
+                <th style="width: 20%;padding:5px;">FY 2025-26 (MT) <span class="text-danger">*</span></th>
+                <th style="width: 20%;padding:5px;">FY 2026-27 (MT) <span class="text-danger">*</span></th>
+                <th style="width: 10%;padding:5px;">Action</th>
             </tr>
         </thead>
         <tbody id="business-plan-body">
@@ -57,7 +57,7 @@
                 <td>
                     @if($index > 0)
                     <button type="button" class="btn btn-sm btn-danger remove-business-plan">
-                        <i class="fas fa-trash"></i> Remove
+                        <i class="ri-delete-bin-line"></i> 
                     </button>
                     @endif
                 </td>
@@ -66,7 +66,7 @@
         </tbody>
     </table>
 
-    <button type="button" class="btn btn-sm btn-primary add-business-plan mt-2">
+    <button type="button" class="btn btn-sm btn-primary add-business-plan">
         <i class="fas fa-plus"></i> Add Another Crop
     </button>
 </div>
